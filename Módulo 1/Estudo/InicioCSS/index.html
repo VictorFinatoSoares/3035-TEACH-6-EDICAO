@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvendo Formulário</title>
+    <link rel = "stylesheet" type = "text/css" media = "screen" href = "style.css">
+</head>
+<body>
+    <div class = "container">
+        <form action = "#">
+            <fieldset>
+                <legend>Formulário de Usuário</legend>
+                <div class = "inputContainer">
+                    <input type = "text" id = "nome" name = "nome" class = "input" required/>
+                    <label for = "nome" class = "labelAnimation">Nome</label>
+                </div>
+           
+                <div class = "inputContainer">
+                    <input type = "text" id = "email" name = "email" class = "input" required/>
+                    <label for = "email" class = "labelAnimation">E-mail</label>
+                </div>
+           
+                <div class = "inputContainer">
+                    <input type = "tel" id = "telefone" name = "telefone" maxlength="11" class = "input" required/>
+                    <label for = "telefone" class = "labelAnimation">Telefone</label>
+                </div>
+
+                <label for = "nascimento" class = "label">Data de Nascimento</label required>
+                <input type = "date" id = "nascimento" name = "nascimento"/>
+           
+                <div class = "inputContainer">
+                    <p>Área de Desenvolvimento de Aplicações</p>
+
+                    <input type = "radio" id = "frontend" name = "area"/>
+                    <label for = "frontend" class = "label">Front-End</label>
+
+                    <input type = "radio" id = "backend" name = "area"/>
+                    <label for = "backend" class = "label">Back-End</label>
+
+                    <input type = "radio" id = "fullstack" name = "area"/>
+                    <label for = "fullstack" class = "label">Full-Stack</label>
+                </div>
+            
+                <input type = "submit" id = "submit" name = "submit"/>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

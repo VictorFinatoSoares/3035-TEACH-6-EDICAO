@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, .body {
+    min-height: 100vh;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Orbitron", sans-serif;
+    background-image: linear-gradient(to right, rgb(17, 13, 56), rgb(15, 16, 117), rgb(25, 26, 102));
+}
+
+.navegation {
+    padding: 12px;
+    margin-bottom:32px;
+    background-color: rgb(1, 22, 48);
+}
+
+.title {
+    font-size: 48px;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(32, 190, 218);
+    text-shadow: 1px 1px 15px rgb(4, 43, 88), 1px 1px 10px rgb(0, 162, 255) ;
+} 
+
+.tableTitle {
+    font-size: 20px;
+    margin: 10px;
+    text-align: left;
+    font-weight: bolder;
+    color: rgb(105, 143, 248);
+    text-shadow: 1px 1px 10px rgb(4, 43, 88), 1px 1px 5px rgb(0, 162, 255) ;
+}
+
+.tableDiv {
+    margin: 20px;
+
+}
+
+.table {
+    border: 3px solid rgb(0, 195, 255);
+    border-bottom: 7px solid rgb(0,195,255);
+    box-shadow: 1px 1px 15px rgb(2, 35, 85), 1px 2px 5px rgb(85, 173, 255);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rank {
+    background-color: rgb(161, 197, 245);
+    text-align: center;
+}
+
+.rankHighlight {    
+    background-color: rgb(121, 173, 240); 
+    text-align: center;
+}
+
+.stats {
+    background-color: rgb(1, 22, 48);
+    font-size: 32px;
+    font-weight: bolder;
+    color: rgb(61, 127, 224);
+    padding: 16px;
+}
+
+.info {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    padding: 20px 12px 20px 1px;
+}
