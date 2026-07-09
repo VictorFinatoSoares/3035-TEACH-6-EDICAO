@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root {
+    --bg-gradiente:  linear-gradient(90deg, rgb(12, 16, 53) 1%, rgb(23, 44, 112) 55%, rgb(0, 9, 39));
+    --box-shadow: 1px 1px 30px rgb(21, 65, 161), 1px 1px 3px rgb(84, 132, 236), 1px 1px 3px rgb(149, 178, 240);
+    --cyan: rgb(93, 177, 255);
+    --text-shadow: 3px 1px 5px rgb(1, 16, 49), 0px 1px 3px rgb(50, 72, 119), 0px 1px 3px rgb(61, 97, 175);
+    --card-color: rgb(0, 4, 24);
+    --card-second-color: rgb(127, 166, 252);
+    --card-highlight-color: rgba(13, 18, 51, 0.986); 
+    --readme-button-color: rgb(54, 96, 236);    
+    --readme-button-color-hover: rgb(125, 199, 248);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-gradiente);
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal
+}
+
+img {
+    width: 100%;
+    border-radius: 8px; 
+    border-bottom: 3px solid var(--cyan);
+    box-shadow: var(--box-shadow);    
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    gap: 64px;
+    margin: 0 5%;
+}
+
+.card {
+    background: var(--card-color);
+    text-shadow: var(--text-shadow);    
+    box-shadow: var(--box-shadow);    
+    border-radius: 8px;    
+    color: var(--card-second-color);
+    transition: 1s
+}
+
+.card:hover {
+    transform: scale(1.025);
+    box-shadow: var(--box-shadow);    
+    background: var(--card-highlight-color);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 30px;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+.readmore-button {
+    border: none;
+    background: none;
+    border: 1px solid var(--readme-button-color);
+    color: var(--readme-button-color);
+    padding: 24px;
+    border-radius: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.5s ;
+}
+
+.readmore-button:hover {
+    border: 1px solid var(--readme-button-color-hover);    
+    color: var(--readme-button-color-hover);
+    transform: scale(1.075);
+    background: var(--card-highlight-color);
+}

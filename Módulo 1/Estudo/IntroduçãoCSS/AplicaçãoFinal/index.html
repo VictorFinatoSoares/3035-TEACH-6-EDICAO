@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>CSS: Desenvolvendo uma aplicação responsiva</title>
+    </head>
+    <body>
+        <section id = "gradient">
+            <img src="assets/avatar.png" alt = "Avatar">
+        </section> 
+        <section id = "login">
+            <div id = "loginContent">
+            <div id = "logoContainer">
+                <img id = "icon" src = "assets/icon.png" alt = "Icon">
+                <h2>LingoWise</h2>
+            </div>
+            <div id = "introductionContainer">
+                <h3>Hey, hello</h3>
+                <span>Enter your email and password to login</span>
+            </div>
+            <form method = "#">
+                <label for = "email">E-mail</label>
+                <input type = "email" id = "email" name = "email" placeholder = "Type your email">
+                <label for = "password">Password</label>
+                <input type = "password" id = "password" name = "password" placeholder = "Type your password">
+
+                <div id = "loginControls">
+                    <label for = "rememberMe">
+                        <input type = "checkbox" id = "rememberMe" name = "rememberMe"/>
+                        Remember Me</label>
+                    <a href = "#">Forgot Password?</a>
+                </div>
+                <div id = "buttonsContainer">
+                    <button class = "loginButton" type = "submit">Login</button>
+                    <button type = "button">Sign Up</button>
+                </div>
+            </form>
+
+            <div id = "socialMedias">
+                <span>Or, login with</span>
+                <div>   
+                    <button type = "button">Facebook</button>
+                    <button type = "button">Google </button>
+                </div>
+            </div>
+        </section> 
+    </body>
+</html>
