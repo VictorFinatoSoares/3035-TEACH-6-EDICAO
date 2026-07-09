@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --pink: #fb6564;
+    --purple: #a03cea;
+    --light-purple: #afa2ce;
+    --white: #ffffff;
+    --body: #3e334e;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+#icon {
+    width: 3rem;
+}
+
+#gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, var(--pink), var(--purple));
+}
+
+#login {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--body);
+}
+
+#loginControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#loginContent {
+    width: 70%;
+}
+
+#logoContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 10px;
+}
+
+#introductionContainer {
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+#introductionContainer > h3 {
+    font-size: 1.7rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#loginControls > a{
+    text-decoration: underline;
+    font-size: 0.7rem;
+
+}
+
+#loginControls > label{
+    font-weight: normal;
+}
+
+#buttonsContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+#buttonsContainer > button {
+    display: flex;
+    gap: 1rem;
+}
+
+input {
+    background: none;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--light-purple)
+}
+
+label {
+    font-weight: bold;
+}
+
+
+#buttonsContainer > button {
+    background: none;
+    border: 1px solid var(--body);
+    padding: 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+#buttonsContainer > .loginButton {
+    border: none;
+    background: linear-gradient(to right, var(--pink), var(--purple));
+    color: var(--white);
+}
+
+#socialMedias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#socialMedias > div {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+#socialMedias > div > button {
+    border: 1px solid var(--light-purple);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    #gradient {
+        display: none;
+    }
+
+}
