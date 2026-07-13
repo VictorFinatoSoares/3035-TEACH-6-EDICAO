@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarefa 6: Lista de Tarefas</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main class="container">
+            <h1>Lista de Tarefas</h1>
+            <form id="form-tarefa">
+                <input type="text" id="input-tarefa" placeholder="Digite uma nova tarefa..." required>
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-filtro="todas">Todas</button>
+                <button class="filtro-btn" data-filtro="pendentes">Pendentes</button>
+                <button class="filtro-btn" data-filtro="concluidas">Concluídas</button>
+            </div>
+
+            <ul id="lista-tarefas"></ul>
+
+            <p id="contador"></p>
+        </main>
+    </body>
+</html>
