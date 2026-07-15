@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src = "script.js" defer></script>    
+        <title>Módulo 1: Desafio</title>
+    </head>
+    <body class = "body">
+        <header>
+            <nav>
+                <div id = "navegation-container">
+                    <h1 id = "website-title">PetShop</h1>
+                    <div id = "sections">
+                        <ul>
+                            <a href = "index.html#start">Início</a>
+                            <a href = "clientes.html">Clientes</a>
+                            <a href = "produtos.html">Produtos</a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id = "clientes">
+                <h2 id = "clientes-title">Clientes Cadastrados</h2>
+                <div id = "clientes-container">
+                </div>
+            </section>
+        </main>
+
+        <div class = "modal-overlay" id = "modal-overlay">
+            <div class = "modal-box">
+                <span id = "fechar-modal">&times;</span>
+                <h3>Detalhes do Cliente</h3>
+                <p><strong>Tutor:</strong> <span id = "modal-tutor-nome"></span></p>
+                <p><strong>Telefone:</strong> <span id = "modal-tutor-telefone"></span></p>
+                <p><strong>Endereço:</strong> <span id = "modal-tutor-endereco"></span></p>
+                <p><strong>Data do Atendimento:</strong> <span id = "modal-tutor-data"></span></p>
+                <p><strong>Animal:</strong> <span id = "modal-animal-nome"></span></p>
+                <p><strong>Idade:</strong> <span id = "modal-animal-idade"></span></p>
+                <p><strong>Porte:</strong> <span id = "modal-animal-porte"></span></p>
+            </div>
+        </div>
+    </body>
+</html>
