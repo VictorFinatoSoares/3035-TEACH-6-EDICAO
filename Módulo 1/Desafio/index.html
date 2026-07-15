@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src = "script.js" defer></script>    
+        <title>Módulo 1: Desafio</title>
+    </head>
+    <body class = "body">
+        <header>
+            <nav>
+                <div id = "navegation-container">
+                    <h1 id = "website-title">PetShop</h1>
+                    <div id = "sections">
+                        <ul>
+                            <a href = "index.html#start">Início</a>
+                            <a href = "clientes.html">Clientes</a>
+                            <a href = "produtos.html">Produtos</a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id = "start">
+                <div id = "presentation-container">
+                    <h2>Olá, tutor!</h2>
+                    <p>Seja muito bem vindo ao PetShop. <br>Cuidamos do seu melhor amigo com muito carinho!</p>
+                </div>
+            </section>
+            <section id = "about">
+                <h2 id = "about-title">Sobre o PetShop</h2>
+                <p id = "about-content">
+                    O PetShop é um espaço dedicado ao bem-estar dos animais de estimação, oferecendo atendimento,
+                    produtos e cuidados especiais para o seu pet. Aqui você pode cadastrar seu animal, consultar
+                    os clientes já atendidos e conferir os produtos disponíveis para compra.
+                </p>
+            </section>
+            <section id = "cadastro">
+                <h2 id = "cadastro-title">Cadastro de Cliente</h2>
+                <form id = "cadastro-form">
+                    <h3 class = "form-subtitle">Dados do Tutor</h3>
+                    <div class = "form-group">
+                        <label for = "tutor-nome">Nome</label>
+                        <input type = "text" id = "tutor-nome" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "tutor-telefone">Telefone</label>
+                        <input type = "text" id = "tutor-telefone" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "tutor-endereco">Endereço</label>
+                        <input type = "text" id = "tutor-endereco" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "tutor-data">Data do Atendimento</label>
+                        <input type = "date" id = "tutor-data" required>
+                    </div>
+
+                    <h3 class = "form-subtitle">Dados do Animal</h3>
+                    <div class = "form-group">
+                        <label for = "animal-nome">Nome</label>
+                        <input type = "text" id = "animal-nome" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "animal-idade">Idade</label>
+                        <input type = "number" id = "animal-idade" required>
+                    </div>
+                    <div class = "form-group">
+                        <label for = "animal-porte">Porte</label>
+                        <input type = "text" id = "animal-porte" placeholder = "Pequeno, médio ou grande" required>
+                    </div>
+
+                    <button type = "submit">Cadastrar Cliente</button>
+                    <p id = "cadastro-message"></p>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
