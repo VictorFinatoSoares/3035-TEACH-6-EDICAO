@@ -34,7 +34,7 @@ function App() {
                 <td>{filme.genero}</td>
                 <td>
                   {/* Passa o link da imagem no parâmetro src da tag img pra exibir a imagem */}
-                  <img className = 'capas' src = {filme.imagem}></img>
+                  <img className = 'capas' src = {filme.imagem} alt = {filme.nome}></img>
                 </td>
               </tr>
             ))}
