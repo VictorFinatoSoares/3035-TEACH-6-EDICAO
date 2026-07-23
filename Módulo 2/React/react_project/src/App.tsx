@@ -1,13 +1,7 @@
-// Script Principal que exibe o Container com todo o conteúdo da página.
-
-import React from 'react';
-import './App.css';
-import {Container} from './components/Container';
+import { AppRoutes } from "./routes/AppRoutes";
 
 function App() {
-  return (
-    <Container/>
-  );
+  return <AppRoutes />
 }
 
 export default App;
