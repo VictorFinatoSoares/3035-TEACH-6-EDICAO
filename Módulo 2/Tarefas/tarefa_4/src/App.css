@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --cor-fundo: #f0f1e1;
+  --cor-superficie: #f9fcc5;
+  --cor-texto: #20241F;
+  --cor-texto-apagado: #6f6c6c;
+  --cor-linha: #00000076;
+  --cor-destaque: #1b7b51;
+  --fonte-titulo: 'Space Grotesk', sans-serif;
+  --fonte-texto: 'Inter', sans-serif;
+  --raio: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: 560px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  display: flex;
+  justify-content: center;
+  padding: 64px 20px;
+}
+
+.container {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inputLine {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.taskInput {
+  flex: 1;
+  font-family: var(--fonte-texto);
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  outline: none;
+}
+
+.taskInput:focus {
+  border-color: var(--cor-destaque);
+}
+
+.addTaskButton {
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--raio);
+  background: var(--cor-destaque);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.addTaskButton:hover {
+  background: #55ab84;
+}
+
+.completedTask .taskName {
+  text-decoration: line-through;
+  color: var(--cor-texto-apagado);
+}
+
+.completeCheckBox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--cor-destaque);
+  cursor: pointer;
+}
+
+.deleteBtn {
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #e74c3c;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background: #c0392b;
+}
+
+.centralColumn {
+  text-align: center;
+  width: 90px;
+}
+
+td.centralBtn {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--cor-texto-apagado);
+  padding: 0 8px 12px;
+  border-bottom: 2px solid var(--cor-linha);
+}
+
+tr {
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+td {
+  padding: 14px 8px;
+  font-size: 15px;
+}
+
+
+
