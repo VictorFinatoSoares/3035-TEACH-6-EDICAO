@@ -9,7 +9,7 @@ export function Home() {
   const { currentTheme } = context;
 
   return (
-    <div className={currentTheme == "dark" ? "dark" : ""}>
+    <div className={currentTheme === "dark" ? "dark" : ""}>
       <div className="dark:bg-gray-900 bg-gray-300  w-screen h-screen flex justify-center items-center duration-1000">
         <ChangeThemeButton />
       </div>
