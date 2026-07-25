@@ -22,5 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Configurações da IDE:
-.vscode
+# Configurações da ide
+.vscode/
