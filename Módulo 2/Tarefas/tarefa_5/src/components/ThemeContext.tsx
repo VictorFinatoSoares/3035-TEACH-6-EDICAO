@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   function changeTheme() {
-    const newTheme = currentTheme == "dark" ? "light" : "dark";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
     setCurrentTheme(newTheme);
   }
 
