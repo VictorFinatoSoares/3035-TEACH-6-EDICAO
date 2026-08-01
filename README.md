@@ -1,6 +1,6 @@
 # 3035 Teach — 6ª Edição | Formação Fullstack
 
-Este repositório reúne os estudos, exercícios, tarefas e desafios desenvolvidos durante a **6ª edição do Teach**, programa gratuito de formação em programação oferecido pela empresa **3035**.
+Este repositório reúne os estudos, exercícios, tarefas e desafios desenvolvidos durante a **6ª edição do Teach**, programa gratuito de formação em programação oferecido pela empresa **3035TECH**.
 
 A trilha possui foco **fullstack** e acompanha uma progressão que começa nos fundamentos da web, avança para desenvolvimento de interfaces com React e segue para backend com Java, bancos de dados, Spring Boot e APIs.
 
@@ -154,4 +154,4 @@ Além de atender às entregas do Teach, este repositório serve como histórico 
 
 ---
 
-Repositório educacional desenvolvido durante a **6ª edição do programa Teach da 3035**.
+Repositório educacional desenvolvido durante a **6ª edição do programa Teach da 3035TECH**.
