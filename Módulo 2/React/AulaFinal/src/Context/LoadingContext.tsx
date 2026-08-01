@@ -2,7 +2,7 @@
  * Contexto global de carregamento.
  * Permite que diferentes páginas compartilhem o estado que controla o Spinner.
  */
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 // Contrato dos valores disponibilizados pelo contexto.
 type LoadingContextType = {
