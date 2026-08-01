@@ -51,25 +51,25 @@ export function Table({ standings }: Props) {
         {item.stats && (
           <>
             <td className="px-6 py-4 text-center">
-              {item.stats[3].displayValue}
+              {item.stats[3].displayValue} {/*Pontuação*/}
             </td>
             <td className="px-6 py-4 text-center">
-              {item.stats[0].displayValue}
+              {item.stats[0].displayValue} {/*Games*/}
             </td>
             <td className="px-6 py-4 text-center">
-              {item.stats[7].displayValue}
+              {item.stats[7].displayValue} {/*Vitórias*/}
             </td>
             <td className="px-6 py-4 text-center">
-              {item.stats[6].displayValue}
+              {item.stats[6].displayValue} {/*Empates*/}
             </td>
             <td className="px-6 py-4 text-center">
-              {item.stats[1].displayValue}
+              {item.stats[1].displayValue} {/*Derrotas*/}
             </td>
             <td className="px-6 py-4 text-center">
-              {item.stats[2].displayValue}
+              {item.stats[2].displayValue} {/*Saldo de gols*/}
             </td>
             <td className="px-6 py-4 text-center whitespace-nowrap">
-              {item.stats[13].displayValue}
+              {item.stats[13].displayValue} {/*Desempenho no campeonato*/}
             </td>
           </>
         )}
