@@ -1,3 +1,7 @@
+/**
+ * Indicador visual de carregamento utilizado durante requisições à API.
+ * A animação e o formato circular são definidos por classes do Tailwind CSS.
+ */
 export function Spinner() {
   return (
     <div
@@ -7,6 +11,7 @@ border-r-transparent align-[-0.125em]
 motion-reduce:animate-[spin_1.5s_linear_infinite]"
       role="status"
     >
+      {/* Texto mantido acessível para leitores de tela, mas oculto visualmente. */}
       <span
         className="absolute! -m-px! h-px! w-px!
 overflow-hidden! whitespace-nowrap! border-0! p-0!

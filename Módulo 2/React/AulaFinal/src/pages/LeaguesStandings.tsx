@@ -1,3 +1,7 @@
+/**
+ * Página de classificação de uma liga.
+ * Usa o identificador presente na URL para buscar temporadas e a tabela correspondente.
+ */
 import { useParams } from "react-router-dom";
 
 import {
@@ -13,24 +17,31 @@ import { Select } from "../components/Select";
 import { useLoading } from "../Context/LoadingContext";
 import { Spinner } from "../components/Spinner";
 
+// Dados gerais da liga e sua classificação na temporada selecionada.
 interface League {
   name: string;
   seasonDisplay: string;
   standings: Standings[];
 }
 
+// Formato de cada temporada retornada pela API antes da conversão para texto.
 interface Season {
   year: number;
 }
 
 export function LeaguesStadings() {
+  // Armazena a classificação atualmente exibida.
   const [league, setLeague] = useState<League>();
+  // Mantém as temporadas disponíveis e a opção escolhida pelo usuário.
   const [seasons, setSeasons] = useState<string[]>([]);
   const [selectedSeason, setSelectedSeason] = useState<string>("");
+  // Compartilha o controle do indicador visual de carregamento.
   const { isLoading, setLoadingState } = useLoading();
 
+  // Captura da URL o identificador dinâmico definido na rota /standings/:leagueId.
   const { leagueId } = useParams();
 
+  // Busca a classificação conforme a liga e a temporada selecionadas.
   const getLeagueStandings = async () => {
     setLoadingState(true);
     const response =
@@ -40,6 +51,7 @@ export function LeaguesStadings() {
     setLoadingState(false);
   };
 
+  // Busca as temporadas disponíveis para preencher o componente Select.
   const getSeasonsByLeague = async () => {
     setLoadingState(true);
     const response = leagueId && (await getLeagueSeasons(leagueId));
@@ -47,20 +59,24 @@ export function LeaguesStadings() {
     setLoadingState(false);
   };
 
+  // Atualiza a temporada quando o usuário escolhe uma nova opção.
   const handleChangeSelectedSeason = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
     event.preventDefault();
     setSelectedSeason(event.target.value);
   };
+  // Atualiza a tabela sempre que uma temporada válida é selecionada.
   useEffect(() => {
     if (selectedSeason?.length) getLeagueStandings();
   }, [selectedSeason]);
 
+  // Define a primeira temporada recebida como seleção inicial.
   useEffect(() => {
     if (!selectedSeason?.length) setSelectedSeason(seasons[0]);
   }, [seasons, selectedSeason]);
 
+  // Recarrega a lista de temporadas quando o identificador da liga muda.
   useEffect(() => {
     getSeasonsByLeague();
   }, [leagueId]);
@@ -79,6 +95,7 @@ export function LeaguesStadings() {
           <Select options={seasons} onChange={handleChangeSelectedSeason} />
         </div>
         <hr className="mt-4" />
+        {/* Exibe o Spinner durante as consultas e a tabela após o carregamento. */}
         {isLoading ? (
           <div className="my-10 flex justify-center items-center">
             <Spinner />
