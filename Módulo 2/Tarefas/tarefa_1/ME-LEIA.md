@@ -1,1 +1,0 @@
-Olá! Só avisando que a versão do typescript que usei pra realizar a tarefa foi a 4.9.5
