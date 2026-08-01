@@ -1,3 +1,8 @@
+/**
+ * Tabela responsável por apresentar a classificação de uma liga.
+ * Cada linha combina os dados de identificação do time com suas estatísticas.
+ */
+// Recorte dos dados de um time utilizados visualmente pela tabela.
 interface Team {
   name: string;
   displayName: string;
@@ -6,26 +11,31 @@ interface Team {
   }[];
 }
 
+// Valor de uma estatística já formatado pela API para exibição.
 interface Stat {
   displayValue: string;
 }
 
+// Estrutura de cada participante presente no array de classificação.
 export interface Standings {
   team: Team;
   stats: Stat[];
 }
 
+// A tabela recebe a classificação completa por meio de props.
 interface Props {
   standings: Standings[];
 }
 
 export function Table({ standings }: Props) {
+  // Percorre os times e cria uma linha para cada posição da classificação.
   const renderTableRows = () => {
     return standings.map((item, index) => (
       <tr
         key={item.team.name}
         className="border-b border-neutral-300 text-left font-light"
       >
+        {/* A posição visual é calculada a partir da ordem recebida da API. */}
         <td className="px-6 py-4">{index + 1}</td>
         <td className="flex items-center gap-2 px-6 py-4">
           {item.team.logos && (
@@ -37,6 +47,7 @@ export function Table({ standings }: Props) {
           )}
           {item?.team.displayName}
         </td>
+        {/* Exibe as estatísticas somente quando esse conjunto existe no item. */}
         {item.stats && (
           <>
             <td className="px-6 py-4 text-center">
@@ -68,6 +79,7 @@ export function Table({ standings }: Props) {
 
   return (
     <div className="flex flex-col">
+      {/* Permite rolagem horizontal da tabela em telas menores. */}
       <div className="overflow-x-auto">
         <table className="min-w-full table-fixed text-left font-light">
           <thead className="border-b border-neutral-400 font-medium text-left">
@@ -128,6 +140,7 @@ export function Table({ standings }: Props) {
               </th>
             </tr>
           </thead>
+          {/* Insere no corpo da tabela todas as linhas construídas acima. */}
           <tbody>{renderTableRows()}</tbody>
         </table>
       </div>

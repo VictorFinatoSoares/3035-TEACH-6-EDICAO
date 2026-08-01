@@ -1,3 +1,6 @@
+/**
+ * Cabeçalho reutilizável exibido no topo das páginas da aplicação.
+ */
 export function Header() {
   return (
     <header className="mb-8">
