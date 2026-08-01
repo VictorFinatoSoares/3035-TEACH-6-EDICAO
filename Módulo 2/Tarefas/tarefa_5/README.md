@@ -1,9 +1,41 @@
-# `Detalhes da tarefa:`
+# Tarefa 5 — Alternância de tema com Context API
 
-- App.tsx: Conecta o Home.tsx com o ThemeContext.tsx. [CONECTA COMPONENTES COM O CONTEXTO]
+Aplicação React que alterna toda a interface entre os temas claro e escuro. O tema atual e a função de troca são compartilhados por Context API, sem necessidade de repassar propriedades manualmente entre componentes.
 
-- ThemeContext.tsx: Contém o contexto do tema (variável do tema atual e função que alterna entre tema escuro e claro) que será transmitido e utilizado por outros componentes. [CONTÉM O CONTEXTO]
+## Funcionalidades
 
-- Home.tsx: Componente principal que exibe a página, contém o componente ChangeThemeButton para exibir o botão que alterna entre os temas da página. [USA O CONTEXTO]
+- iniciar a página no tema claro;
+- alternar entre os temas claro e escuro;
+- atualizar fundo, texto e efeitos do botão;
+- aplicar uma transição visual entre os estados.
 
-- ChangeThemeButton.tsx: É o componente com o botão que altera o tema usando o changeTheme. [USA O CONTEXTO]
+## Conceitos praticados
+
+- estado com `useState`;
+- contexto tipado com `createContext`;
+- Provider para compartilhar estado e comportamento;
+- consumo do contexto com `useContext`;
+- tipagem de `children` com `ReactNode`;
+- classes condicionais;
+- modo escuro, estados de interação e transições com Tailwind CSS.
+
+## Organização dos componentes
+
+- `App.tsx`: conecta `ThemeProvider` e `Home`;
+- `ThemeContext.tsx`: declara o contrato do contexto, mantém `currentTheme` e fornece `changeTheme`;
+- `Home.tsx`: lê o tema e aplica a classe que ativa o modo escuro;
+- `ChangeThemeButton.tsx`: consome a função de alternância e renderiza o botão;
+- `index.css`: inicializa as camadas do Tailwind CSS.
+
+## Como executar
+
+```bash
+npm install
+npm start
+```
+
+Para gerar a versão de produção, execute `npm run build`.
+
+## Tecnologias
+
+React, TypeScript 4.9.5, Context API, Tailwind CSS 3 e Create React App.
