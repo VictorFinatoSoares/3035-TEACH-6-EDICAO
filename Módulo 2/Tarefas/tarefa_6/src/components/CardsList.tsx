@@ -11,7 +11,7 @@ interface ICard {
 export function CardsList() {
   const [cards, setCards] = useState<ICard[]>([]);
 
-  // Função que faz uma chamada para a pokeapi
+  //  Função que faz uma chamada para a pokeapi
   async function getPokemons() {
     // faz uma requisição pra api com todos os pokemons
     const res = await fetch("https://pokeapi.co/api/v2/pokemon"); // o limite pode ser aumentado com ?limit=limite
