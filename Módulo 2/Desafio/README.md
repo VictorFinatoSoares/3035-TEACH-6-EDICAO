@@ -160,5 +160,4 @@ src/
 - Layout responsivo com Tailwind CSS
 - Estados de carregamento e erro
 - Validação de formulário
-- Modal acessível
 - Feedback visual para interações
