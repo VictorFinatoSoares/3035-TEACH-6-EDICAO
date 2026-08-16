@@ -107,9 +107,7 @@ export function MainCard() {
   }
 
   // Caso user seja null
-  if (!user) {
-    return null;
-  }
+  if (!user) return null;
 
   // Em caso de sucesso retorna os componentes de usercard e repositorylistcard passando como propriedade os dados obtidos
   return (
