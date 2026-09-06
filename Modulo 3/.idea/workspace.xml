@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/introducao/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/Módulo 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000587442673492" />
+      <entry key="S5" value="1.0226466247453843" />
+      <entry key="S10" value="1.1911508378510696" />
+      <entry key="S30" value="1.8885490805950162" />
+      <entry key="S60" value="2.4190894067735216" />
+      <entry key="M2" value="3.775022344920723" />
+      <entry key="M5" value="11.496786944590513" />
+      <entry key="M10" value="28.90957655281568" />
+      <entry key="M15" value="44.66129445794855" />
+      <entry key="M30" value="77.97313875285263" />
+      <entry key="H1" value="111.96665716365239" />
+      <entry key="H2" value="138.53512593547447" />
+      <entry key="H4" value="155.5970131710886" />
+      <entry key="D1" value="172.33484132920447" />
+      <entry key="W1" value="175.46944626484023" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.004944361695196405" />
+      <entry key="MS500" value="0.3457976572527412" />
+      <entry key="S2" value="0.7668894819219148" />
+      <entry key="S5" value="0.9199902707234945" />
+      <entry key="S10" value="1.1299910236260118" />
+      <entry key="S30" value="1.8531308340936263" />
+      <entry key="S60" value="2.3116598299159428" />
+      <entry key="M2" value="2.7293883707004807" />
+      <entry key="M5" value="3.9686345170488826" />
+      <entry key="M10" value="6.606424937158368" />
+      <entry key="M15" value="9.041472297034113" />
+      <entry key="M30" value="14.34478433740346" />
+      <entry key="H1" value="19.811915955995502" />
+      <entry key="H2" value="24.062281034039838" />
+      <entry key="H4" value="26.774763555354568" />
+      <entry key="D1" value="29.422088921958405" />
+      <entry key="W1" value="29.916383144700447" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.0054881149715329" />
+      <entry key="MS500" value="0.42555732950277836" />
+      <entry key="S2" value="1.2898141204191518" />
+      <entry key="S5" value="1.7098491909294615" />
+      <entry key="S10" value="2.1806656999551555" />
+      <entry key="S30" value="3.666947809717263" />
+      <entry key="S60" value="4.683462166232911" />
+      <entry key="M2" value="6.47241766019663" />
+      <entry key="M5" value="15.432941522715984" />
+      <entry key="M10" value="35.475644402641024" />
+      <entry key="M15" value="53.66182076626834" />
+      <entry key="M30" value="92.28373427881398" />
+      <entry key="H1" value="131.7551047236835" />
+      <entry key="H2" value="162.58332512880236" />
+      <entry key="H4" value="182.36400524191686" />
+      <entry key="D1" value="201.75551785645263" />
+      <entry key="W1" value="205.38562453620386" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3IvbFSuxOSL0Uj0okSrm0glLREd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Ex01.executor": "Run",
+    "Application.Ex02.executor": "Run",
+    "Application.Ex03.executor": "Run",
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO/Modulo 3/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Modulo 3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Modulo 3" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="" />
+      <created>1788647887266</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788647887266</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
