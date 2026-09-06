@@ -14,5 +14,7 @@ public class Ex01 {
 
         System.out.printf("Nome: %s\n", nome);
         System.out.printf("Idade: %d\n", idade);
+
+        sc.close();
     }
 }
