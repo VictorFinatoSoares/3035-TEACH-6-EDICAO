@@ -4,23 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exercicios/estrutura_sequencial/Ex03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/introducao/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/Módulo 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Módulo 2/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="added: first three exercises resolved">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modulo 3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/introducao/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exercicios/comparativo_logica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exercicios/comparativo_logica/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Módulo 3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Módulo 3/.idea/Módulo 3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Módulo 3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Módulo 3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Módulo 3/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="12" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,73 +35,85 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VictorFinatoSoares&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/VictorFinatoSoares/3035-TEACH-6-EDICAO.git&quot;,
+    &quot;accountId&quot;: &quot;dfa2d2a4-ff86-4c48-a57f-1c12d4a28e40&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000587442673492" />
-      <entry key="S5" value="1.0226466247453843" />
-      <entry key="S10" value="1.1911508378510696" />
-      <entry key="S30" value="1.8885490805950162" />
-      <entry key="S60" value="2.4190894067735216" />
-      <entry key="M2" value="3.775022344920723" />
-      <entry key="M5" value="11.496786944590513" />
-      <entry key="M10" value="28.90957655281568" />
-      <entry key="M15" value="44.66129445794855" />
-      <entry key="M30" value="77.97313875285263" />
-      <entry key="H1" value="111.96665716365239" />
-      <entry key="H2" value="138.53512593547447" />
-      <entry key="H4" value="155.5970131710886" />
-      <entry key="D1" value="172.33484132920447" />
-      <entry key="W1" value="175.46944626484023" />
+      <entry key="MS100" value="1.7512360592714034" />
+      <entry key="MS500" value="5.270485189817181" />
+      <entry key="S2" value="8.311954926581492" />
+      <entry key="S5" value="9.267046040202406" />
+      <entry key="S10" value="9.623034202201023" />
+      <entry key="S30" value="10.286432525948587" />
+      <entry key="S60" value="17.46738706327847" />
+      <entry key="M2" value="43.493173963229424" />
+      <entry key="M5" value="96.25075823960968" />
+      <entry key="M10" value="138.06483543207779" />
+      <entry key="M15" value="164.23956463267967" />
+      <entry key="M30" value="212.32239081020097" />
+      <entry key="H1" value="258.54294962198463" />
+      <entry key="H2" value="294.31236359991544" />
+      <entry key="H4" value="317.33529702535276" />
+      <entry key="D1" value="340.01764075470993" />
+      <entry key="W1" value="344.27840535664416" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.004944361695196405" />
-      <entry key="MS500" value="0.3457976572527412" />
-      <entry key="S2" value="0.7668894819219148" />
-      <entry key="S5" value="0.9199902707234945" />
-      <entry key="S10" value="1.1299910236260118" />
-      <entry key="S30" value="1.8531308340936263" />
-      <entry key="S60" value="2.3116598299159428" />
-      <entry key="M2" value="2.7293883707004807" />
-      <entry key="M5" value="3.9686345170488826" />
-      <entry key="M10" value="6.606424937158368" />
-      <entry key="M15" value="9.041472297034113" />
-      <entry key="M30" value="14.34478433740346" />
-      <entry key="H1" value="19.811915955995502" />
-      <entry key="H2" value="24.062281034039838" />
-      <entry key="H4" value="26.774763555354568" />
-      <entry key="D1" value="29.422088921958405" />
-      <entry key="W1" value="29.916383144700447" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.4162611589253396E-101" />
+      <entry key="S5" value="5.177594450953794E-41" />
+      <entry key="S10" value="1.0399120964795755E-20" />
+      <entry key="S30" value="5.230619144950511E-7" />
+      <entry key="S60" value="0.001563481301089962" />
+      <entry key="M2" value="0.0896126457009743" />
+      <entry key="M5" value="1.217512871575881" />
+      <entry key="M10" value="3.8802004032296193" />
+      <entry key="M15" value="6.488278547307769" />
+      <entry key="M30" value="12.525267333167365" />
+      <entry key="H1" value="19.092397245663978" />
+      <entry key="H2" value="24.382974454130835" />
+      <entry key="H4" value="27.83214664117762" />
+      <entry key="D1" value="31.248121512800253" />
+      <entry key="W1" value="31.89107908423727" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0054881149715329" />
-      <entry key="MS500" value="0.42555732950277836" />
-      <entry key="S2" value="1.2898141204191518" />
-      <entry key="S5" value="1.7098491909294615" />
-      <entry key="S10" value="2.1806656999551555" />
-      <entry key="S30" value="3.666947809717263" />
-      <entry key="S60" value="4.683462166232911" />
-      <entry key="M2" value="6.47241766019663" />
-      <entry key="M5" value="15.432941522715984" />
-      <entry key="M10" value="35.475644402641024" />
-      <entry key="M15" value="53.66182076626834" />
-      <entry key="M30" value="92.28373427881398" />
-      <entry key="H1" value="131.7551047236835" />
-      <entry key="H2" value="162.58332512880236" />
-      <entry key="H4" value="182.36400524191686" />
-      <entry key="D1" value="201.75551785645263" />
-      <entry key="W1" value="205.38562453620386" />
+      <entry key="MS100" value="1.5573873469913535" />
+      <entry key="MS500" value="5.159631329013618" />
+      <entry key="S2" value="8.266999725314225" />
+      <entry key="S5" value="9.246850253730631" />
+      <entry key="S10" value="9.612522029260136" />
+      <entry key="S30" value="10.282713333129614" />
+      <entry key="S60" value="17.466014180994037" />
+      <entry key="M2" value="43.577860351452" />
+      <entry key="M5" value="97.45447366407785" />
+      <entry key="M10" value="141.920156051058" />
+      <entry key="M15" value="170.69821730174098" />
+      <entry key="M30" value="224.81795955808582" />
+      <entry key="H1" value="277.612837702523" />
+      <entry key="H2" value="318.68112034373104" />
+      <entry key="H4" value="345.15938946022965" />
+      <entry key="D1" value="371.26426589744966" />
+      <entry key="W1" value="376.16926656056677" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3IvbFSuxOSL0Uj0okSrm0glLREd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -107,36 +122,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Ex01.executor": "Run",
-    "Application.Ex02.executor": "Run",
-    "Application.Ex03.executor": "Run",
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO/Modulo 3/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Ex01.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex02.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex03.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO/Modulo 3/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Modulo 3" />
@@ -170,5 +185,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added: first three exercises resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: first three exercises resolved" />
   </component>
 </project>
