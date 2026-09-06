@@ -14,5 +14,7 @@ public class Ex02 {
 
         double resultado = num1 + num2;
         System.out.printf("%.2f + %.2f = %.2f", num1, num2, resultado);
+
+        sc.close();
     }
 }
