@@ -84,7 +84,14 @@ public class JogoAdivinhacao {
     }
 
     public static void verRegras() {
-
+        System.out.println("""
+                ====== REGRAS ======\s
+           
+                1. Quanto mais díficil, maior a recompensa recebida
+                2. Cada tentativa gasta desconta 25 pontos
+                3. Para cada tentativa sobrando, é recebido um bônus de 50 pontos.
+                4. É possível visualizar apenas as últimas 10 pontuações.
+                """);
     }
 
     public static void exibirPontuacoes() {
