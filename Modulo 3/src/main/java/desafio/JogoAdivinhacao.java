@@ -33,7 +33,7 @@ public class JogoAdivinhacao {
 
 
     public static void main(String[] args) {
-
+        mainMenu();
     }
 
     public static void mainMenu() {
@@ -77,10 +77,20 @@ public class JogoAdivinhacao {
                 """);
 
         int dificuldade = lerNumeroInteiro("Escolha a dificuldade: ");
+
+        // Verifica se a dificuldade existe:
+        if (dificuldade >= 1 && dificuldade <= 3) {
+            numberLimit = NUMBER_LIMITS[dificuldade - 1];
+            maxAttempts = MAX_ATTEMPTS_CONFIG[dificuldade - 1];
+            levelScore = LEVEL_SCORES[dificuldade - 1];
+            currentLevelName = LEVEL_NAMES[dificuldade - 1];
+        } else {
+            System.out.println("Essa dificuldade NÃO EXISTE!");
+        }
     }
 
     public static void iniciarNovoJogo() {
-
+        definirDificuldade();
     }
 
     public static void verRegras() {
