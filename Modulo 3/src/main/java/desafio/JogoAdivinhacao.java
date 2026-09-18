@@ -31,9 +31,10 @@ public class JogoAdivinhacao {
     public static String[] LEVEL_RECORDS = new String[MAX_HISTORY];
     public static int TOTAL_GAMES_RECORDED = 0;
 
-
     public static void main(String[] args) {
-        mainMenu();
+        while (GAME_IS_RUNNING) {
+            mainMenu();
+        }
     }
 
     public static void mainMenu() {
@@ -91,6 +92,36 @@ public class JogoAdivinhacao {
 
     public static void iniciarNovoJogo() {
         definirDificuldade();
+
+        int computerNumber = random.nextInt(numberLimit + 1);
+        System.out.println(computerNumber);
+        int qTentativas = 0;
+
+        while (qTentativas < maxAttempts) {
+            int userNumber = lerNumeroInteiro("O computador pensou em um número, tente adivinhá-lo: ");
+
+            if (userNumber == computerNumber) {
+                System.out.println("Você ACERTOU! Parabéns!");
+                int qTentativasSobrando = maxAttempts - qTentativas;
+
+                levelScore = calcularPontuacao(qTentativasSobrando, qTentativas);
+
+                if (TOTAL_GAMES_RECORDED == MAX_HISTORY) {
+                    TOTAL_GAMES_RECORDED = 0;
+                }
+
+                LEVEL_RECORDS[TOTAL_GAMES_RECORDED] = currentLevelName;
+                SCORE_RECORDS[TOTAL_GAMES_RECORDED] = levelScore;
+
+                TOTAL_GAMES_RECORDED++;
+                break;
+            } else {
+                System.out.printf("%d não é a resposta, tente novamente.\n\n", userNumber);
+            }
+
+            qTentativas++;
+        }
+
     }
 
     public static void verRegras() {
@@ -98,21 +129,26 @@ public class JogoAdivinhacao {
                 ====== REGRAS ======\s
            
                 1. Quanto mais díficil, maior a recompensa recebida
-                2. Cada tentativa gasta desconta 25 pontos
+                2. Cada tentativa gasta desconta 30 pontos
                 3. Para cada tentativa sobrando, é recebido um bônus de 50 pontos.
                 4. É possível visualizar apenas as últimas 10 pontuações.
                 """);
     }
 
-    public static void exibirPontuacoes() {
+    public static int calcularPontuacao(int tentativasSobrando, int qErros) {
+        return (tentativasSobrando * BONUS_SCORE) - (qErros * DISCOUNT_SCORE);
+    }
 
+    public static void exibirPontuacoes() {
+        for (int i = 0; i < TOTAL_GAMES_RECORDED; i++) {
+            System.out.printf("%d - %s: %d pontos\n", i + 1, LEVEL_RECORDS[i], SCORE_RECORDS[i]);
+        }
     }
 
     public static void sair() {
         System.out.println("Encerrando...");
         GAME_IS_RUNNING = false;
     }
-
 
     public static int lerNumeroInteiro(String message) {
         while (true) {
