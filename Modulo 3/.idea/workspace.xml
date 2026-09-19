@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="added: dificuldades por level no desafio do módulo 3">
+    <list default="true" id="96c52385-12b7-463f-8982-feeb35da75e6" name="Changes" comment="feat: started game loop logic (Desafio Módulo 3)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/desafio/JogoAdivinhacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/desafio/JogoAdivinhacao.java" afterDir="false" />
     </list>
@@ -38,67 +38,71 @@
     &quot;accountId&quot;: &quot;dfa2d2a4-ff86-4c48-a57f-1c12d4a28e40&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/desafio/ENUNCIADO.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/desafio/JogoAdivinhacao.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.00002204624969" />
-      <entry key="S2" value="1.1027916462713552" />
-      <entry key="S5" value="1.6825170703360184" />
-      <entry key="S10" value="2.417394615013151" />
-      <entry key="S30" value="3.890345617309334" />
-      <entry key="S60" value="6.0183752595691775" />
-      <entry key="M2" value="11.276810437977709" />
-      <entry key="M5" value="27.574574141525407" />
-      <entry key="M10" value="59.367672704115435" />
-      <entry key="M15" value="92.06197685612447" />
-      <entry key="M30" value="179.7376910169901" />
-      <entry key="H1" value="339.99486081541664" />
-      <entry key="H2" value="594.4882614817332" />
-      <entry key="H4" value="870.2624965926908" />
-      <entry key="D1" value="1270.6758973879262" />
-      <entry key="W1" value="1363.6346199222316" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.359309866495566E-134" />
+      <entry key="S2" value="3.994975778344472E-34" />
+      <entry key="S5" value="5.383584028233131E-14" />
+      <entry key="S10" value="3.5585768720151744E-7" />
+      <entry key="S30" value="0.016920526068975556" />
+      <entry key="S60" value="0.3402478507784791" />
+      <entry key="M2" value="2.210878728205093" />
+      <entry key="M5" value="8.633953195874389" />
+      <entry key="M10" value="17.799896340466304" />
+      <entry key="M15" value="30.894855868570666" />
+      <entry key="M30" value="90.00111102306236" />
+      <entry key="H1" value="234.57726178701802" />
+      <entry key="H2" value="496.1819582479524" />
+      <entry key="H4" value="808.0928273508374" />
+      <entry key="D1" value="1298.7787120188289" />
+      <entry key="W1" value="1417.857762454579" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.247827855071539E-202" />
-      <entry key="MS500" value="5.038701151381482E-41" />
-      <entry key="S2" value="8.471250584913214E-11" />
-      <entry key="S5" value="1.0500671806111892E-4" />
-      <entry key="S10" value="0.013213362535471876" />
-      <entry key="S30" value="0.49412180189323607" />
-      <entry key="S60" value="1.7900593033593808" />
-      <entry key="M2" value="4.2784471218752085" />
-      <entry key="M5" value="9.20367139030663" />
-      <entry key="M10" value="14.986365994500408" />
-      <entry key="M15" value="19.58841899800052" />
-      <entry key="M30" value="30.30438249455091" />
-      <entry key="H1" value="47.35972290899126" />
-      <entry key="H2" value="72.54475423354155" />
-      <entry key="H4" value="99.55360346804946" />
-      <entry key="D1" value="139.10901052537002" />
-      <entry key="W1" value="148.3671629381979" />
+      <entry key="MS100" value="1.0000000000002136" />
+      <entry key="MS500" value="1.0029236777085795" />
+      <entry key="S2" value="1.2325318110744459" />
+      <entry key="S5" value="1.5579470036799123" />
+      <entry key="S10" value="1.7469587715119674" />
+      <entry key="S30" value="1.9207995491747698" />
+      <entry key="S60" value="2.1849082744659" />
+      <entry key="M2" value="3.178689221782136" />
+      <entry key="M5" value="6.0306984288681695" />
+      <entry key="M10" value="9.691745528757071" />
+      <entry key="M15" value="13.474617395303893" />
+      <entry key="M30" value="25.08574174277823" />
+      <entry key="H1" value="45.27006357245095" />
+      <entry key="H2" value="75.03900581825361" />
+      <entry key="H4" value="107.98088151836629" />
+      <entry key="D1" value="158.60058245049632" />
+      <entry key="W1" value="170.82927287259608" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.00240457893231429" />
-      <entry key="MS500" value="0.2993754744152378" />
-      <entry key="S2" value="0.8161302453423456" />
-      <entry key="S5" value="1.4963451627436748" />
-      <entry key="S10" value="2.293943141884462" />
-      <entry key="S30" value="4.288142279599686" />
-      <entry key="S60" value="7.717996403910276" />
-      <entry key="M2" value="15.468708232237471" />
-      <entry key="M5" value="36.69822388852306" />
-      <entry key="M10" value="74.27405558669916" />
-      <entry key="M15" value="111.5718992412731" />
-      <entry key="M30" value="209.97190135851403" />
-      <entry key="H1" value="387.295089662557" />
-      <entry key="H2" value="666.985764157077" />
-      <entry key="H4" value="969.7833402146059" />
-      <entry key="D1" value="1409.77726840772" />
-      <entry key="W1" value="1512.0006195209164" />
+      <entry key="MS100" value="0.012779719664966467" />
+      <entry key="MS500" value="0.4191497360010624" />
+      <entry key="S2" value="0.9831257251993628" />
+      <entry key="S5" value="1.4189972560421642" />
+      <entry key="S10" value="1.6662118477487815" />
+      <entry key="S30" value="1.9069701997751636" />
+      <entry key="S60" value="2.503446295164471" />
+      <entry key="M2" value="5.362246643604444" />
+      <entry key="M5" value="14.631664911582178" />
+      <entry key="M10" value="27.460588530240706" />
+      <entry key="M15" value="44.336991560733225" />
+      <entry key="M30" value="115.0474692530917" />
+      <entry key="H1" value="279.80333355208074" />
+      <entry key="H2" value="571.1796385372555" />
+      <entry key="H4" value="916.042216855196" />
+      <entry key="D1" value="1457.3712889942421" />
+      <entry key="W1" value="1588.685797148211" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -113,41 +117,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Ex01.executor": "Run",
-    "Application.Ex02.executor": "Run",
-    "Application.Ex03.executor": "Run",
-    "Application.Ex04.executor": "Run",
-    "Application.Ex05.executor": "Run",
-    "Application.Ex06.executor": "Run",
-    "Application.Ex07.executor": "Run",
-    "Application.JogoAdivinhacao.executor": "Run",
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO/Modulo 3/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Ex01.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex02.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex03.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex04.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex05.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex06.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ex07.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JogoAdivinhacao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/finatodev/Área de trabalho/Coding/3035-TEACH-6-EDICAO/Modulo 3/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Modulo 3" />
@@ -198,6 +202,7 @@
     <MESSAGE value="resolved: Exercicios sobre expressões comparativas e lógicas" />
     <MESSAGE value="resolved: Exercicios sobre estrutura condicional" />
     <MESSAGE value="added: dificuldades por level no desafio do módulo 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: dificuldades por level no desafio do módulo 3" />
+    <MESSAGE value="feat: started game loop logic (Desafio Módulo 3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: started game loop logic (Desafio Módulo 3)" />
   </component>
 </project>

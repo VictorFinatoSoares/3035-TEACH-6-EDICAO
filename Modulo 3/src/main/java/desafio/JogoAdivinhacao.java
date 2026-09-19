@@ -68,7 +68,7 @@ public class JogoAdivinhacao {
         }
     }
 
-    public static void definirDificuldade() {
+    public static void definirDificuldade(){
         System.out.println("""
                 ====== DIFICULDADES ======\s
                 
@@ -77,24 +77,26 @@ public class JogoAdivinhacao {
                 [3] Díficil -> Número entre 1 200, com 5 tentativas.
                 """);
 
-        int dificuldade = lerNumeroInteiro("Escolha a dificuldade: ");
-
         // Verifica se a dificuldade existe:
-        if (dificuldade >= 1 && dificuldade <= 3) {
-            numberLimit = NUMBER_LIMITS[dificuldade - 1];
-            maxAttempts = MAX_ATTEMPTS_CONFIG[dificuldade - 1];
-            levelScore = LEVEL_SCORES[dificuldade - 1];
-            currentLevelName = LEVEL_NAMES[dificuldade - 1];
-        } else {
-            System.out.println("Essa dificuldade NÃO EXISTE!");
+        while (true) {
+            int dificuldade = lerNumeroInteiro("Escolha a dificuldade: ");
+
+            if (dificuldade >= 1 && dificuldade <= 3) {
+                numberLimit = NUMBER_LIMITS[dificuldade - 1];
+                maxAttempts = MAX_ATTEMPTS_CONFIG[dificuldade - 1];
+                levelScore = LEVEL_SCORES[dificuldade - 1];
+                currentLevelName = LEVEL_NAMES[dificuldade - 1];
+                break;
+            } else {
+                System.out.println("Essa dificuldade NÃO EXISTE!");
+            }
         }
     }
 
     public static void iniciarNovoJogo() {
         definirDificuldade();
 
-        int computerNumber = random.nextInt(numberLimit + 1);
-        System.out.println(computerNumber);
+        int computerNumber = random.nextInt(numberLimit) + 1;
         int qTentativas = 0;
 
         while (qTentativas < maxAttempts) {
@@ -106,22 +108,30 @@ public class JogoAdivinhacao {
 
                 levelScore = calcularPontuacao(qTentativasSobrando, qTentativas);
 
-                if (TOTAL_GAMES_RECORDED == MAX_HISTORY) {
-                    TOTAL_GAMES_RECORDED = 0;
+                if (TOTAL_GAMES_RECORDED < MAX_HISTORY) {
+                    LEVEL_RECORDS[TOTAL_GAMES_RECORDED] = currentLevelName;
+                    SCORE_RECORDS[TOTAL_GAMES_RECORDED] = levelScore;
+                    TOTAL_GAMES_RECORDED++;
+                } else {
+                    for (int i = 0; i < MAX_HISTORY - 1; i++) {
+                        LEVEL_RECORDS[i] = LEVEL_RECORDS[i + 1];
+                        SCORE_RECORDS[i] = SCORE_RECORDS[i + 1];
+                    }
+                    LEVEL_RECORDS[MAX_HISTORY - 1] = currentLevelName;
+                    SCORE_RECORDS[MAX_HISTORY - 1] = levelScore;
                 }
+                return;
 
-                LEVEL_RECORDS[TOTAL_GAMES_RECORDED] = currentLevelName;
-                SCORE_RECORDS[TOTAL_GAMES_RECORDED] = levelScore;
-
-                TOTAL_GAMES_RECORDED++;
-                break;
             } else {
-                System.out.printf("%d não é a resposta, tente novamente.\n\n", userNumber);
+                if (userNumber > computerNumber) {
+                    System.out.printf("O número é menor que %d!\n",  userNumber);
+                } else {
+                    System.out.printf("O número é maior que %d!\n", userNumber);
+                }
             }
-
             qTentativas++;
         }
-
+        System.out.printf("Ops... você não conseguiu acertar, o número era %d\n", computerNumber);
     }
 
     public static void verRegras() {
@@ -136,7 +146,7 @@ public class JogoAdivinhacao {
     }
 
     public static int calcularPontuacao(int tentativasSobrando, int qErros) {
-        return (tentativasSobrando * BONUS_SCORE) - (qErros * DISCOUNT_SCORE);
+        return levelScore + (tentativasSobrando * BONUS_SCORE - qErros * DISCOUNT_SCORE);
     }
 
     public static void exibirPontuacoes() {
