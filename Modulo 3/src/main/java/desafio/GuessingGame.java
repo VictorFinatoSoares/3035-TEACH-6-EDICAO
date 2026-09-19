@@ -179,7 +179,7 @@ public class GuessingGame {
             int targetNumber = secretSequence[i];
 
             boolean foundCurrentNumber = false;
-            System.out.printf("\nAdivinhe o número (%d) na sequência: ", i + 1);
+            System.out.printf("\nAdivinhe o número na posição %d da sequência\n", i + 1);
 
             while (attemptsUsed <= totalAttempts) {
                 int userNumber = readIntegerNumber("Tentativa (" + attemptsUsed + "/" + totalAttempts + "): ");
