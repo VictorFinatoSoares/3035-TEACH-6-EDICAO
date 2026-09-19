@@ -54,21 +54,23 @@ public class GuessingGame {
                 ====== MENU PRINCIPAL ======
                
                 [1] Iniciar um novo jogo
-                [2] Ver regras
-                [3] Ver histórico de pontuações
-                [4] Ver histórico de recordes
-                [5] Sair
+                [2] Iniciar modo com sequência (3 números)
+                [3] Ver regras
+                [4] Ver histórico de pontuações
+                [5] Ver histórico de recordes
+                [6] Sair
                
                """);
 
-        int option = readIntegerNumber("Escolha uma opção do menu (1-5): ");
+        int option = readIntegerNumber("Escolha uma opção do menu (1-6): ");
 
         switch (option) {
             case 1 -> startNewGame();
-            case 2 -> showRules();
-            case 3 -> showScoreHistory();
-            case 4 -> showRecordsHistory();
-            case 5 -> exitGame();
+            case 2 -> startSequenceMode();
+            case 3 -> showRules();
+            case 4 -> showScoreHistory();
+            case 5 -> showRecordsHistory();
+            case 6 -> exitGame();
             default -> System.out.println("ERRO: Essa opção não existe no menu!\n");
         }
     }
@@ -152,6 +154,57 @@ public class GuessingGame {
         }
 
         System.out.printf("\nOps... suas tentativas acabaram e você não conseguiu acertar, o número era %d\n\n", computerNumber);
+    }
+
+    public static void startSequenceMode() {
+        System.out.println("""
+                
+                ====== MODO SEQUÊNCIA ======
+                
+                O computador pensou em uma sequência de 3 números entre 1 e 20!
+                Você tem 15 tentativas no total para acertar os 3 números. Boa sorte!
+                
+                """);
+
+        int[] secretSequence = new int[3];
+
+        for (int i = 0; i < secretSequence.length; i++) {
+            secretSequence[i] = random.nextInt(20) + 1;
+        }
+
+        int totalAttempts = 15;
+        int attemptsUsed = 1;
+
+        for (int i = 0; i < secretSequence.length; i++) {
+            int targetNumber = secretSequence[i];
+
+            boolean foundCurrentNumber = false;
+            System.out.printf("\nAdivinhe o número (%d) na sequência: ", i + 1);
+
+            while (attemptsUsed <= totalAttempts) {
+                int userNumber = readIntegerNumber("Tentativa (" + attemptsUsed + "/" + totalAttempts + "): ");
+
+                if (userNumber == targetNumber) {
+                    System.out.printf("VOCÊ ACERTOU! O número na posição %d era %d\n", i + 1, targetNumber);
+                    foundCurrentNumber = true;
+                    attemptsUsed++;
+                    break;
+                } else {
+                    numberHint(userNumber, targetNumber);
+                }
+
+                attemptsUsed++;
+            }
+
+            if (!foundCurrentNumber) {
+                System.out.printf("\nOps... suas tentativas acabaram! A sequência era: [%d, %d, %d]\n\n",
+                        secretSequence[0], secretSequence[1], secretSequence[2]);
+                return;
+            }
+        }
+
+        System.out.printf("\nPARABÉNS! Você descobriu toda a sequência: [%d, %d, %d]!\n\n",
+                secretSequence[0], secretSequence[1], secretSequence[2]);
     }
 
     public static void registerNewGame() {
