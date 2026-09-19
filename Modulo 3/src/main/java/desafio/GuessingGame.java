@@ -36,6 +36,12 @@ public class GuessingGame {
     public static int[] BEST_SCORES = new int[3];
     public static int CURRENT_DIFFICULTY_INDEX = 0;
 
+    // [DESAFIO BÔNUS] Loja de dicas
+    public static int PARITY_HINT_COST = 10;
+    public static int INTERVAL_HINT_COST = 20;
+    public static int PROXIMITY_HINT_COST = 15;
+    public static int TOTAL_HINTS_COST = 0;
+
     public static void main(String[] args) {
         while (GAME_IS_RUNNING) {
             mainMenu();
@@ -101,6 +107,9 @@ public class GuessingGame {
         int computerNumber = random.nextInt(numberLimit) + 1;
         int attemptsUsed = 1;
 
+        int lastGuess = 0;
+        TOTAL_HINTS_COST = 0;
+
         System.out.printf("""
                 
                 ====== O JOGO COMEÇOU! ======
@@ -110,7 +119,14 @@ public class GuessingGame {
                 """, numberLimit, maxAttempts);
 
         while (attemptsUsed <= maxAttempts) {
-            int userNumber = readIntegerNumber("Tentativa (" + attemptsUsed + "/" + maxAttempts + "): ");
+            int userNumber = readIntegerNumber("Tentativa (" + attemptsUsed + "/" + maxAttempts + ") [DIGITE 0 PARA UMA DICA]: ");
+
+            if (userNumber == 0) {
+                requestHint(computerNumber, lastGuess);
+                continue;
+            }
+
+            lastGuess = userNumber;
 
             if (userNumber == computerNumber) {
                 System.out.println("\nVocê ACERTOU! Parabéns!\n");
@@ -197,7 +213,7 @@ public class GuessingGame {
     }
 
     public static int calculateScore(int attemptsRemaining, int attemptsUsed) {
-        return baseScore + (attemptsRemaining * BONUS_SCORE - attemptsUsed * DISCOUNT_SCORE);
+        return baseScore + (attemptsRemaining * BONUS_SCORE - attemptsUsed * DISCOUNT_SCORE) - TOTAL_HINTS_COST;
     }
 
     public static void showScoreHistory() {
@@ -219,6 +235,57 @@ public class GuessingGame {
 
         for (int i = 0; i < BEST_SCORES.length; i++) {
             System.out.printf("[RECORDE] Dificuldade %s: %d pontos\n", DIFFICULTY_NAMES_CONFIG[i], BEST_SCORES[i]);
+        }
+    }
+
+    public static void requestHint(int computerNumber, int lastGuess) {
+        System.out.println("""
+                
+                ====== LOJA DE DICAS ======
+                
+                [1] Paridade (Par/Ímpar) (-10 pontos)
+                [2] Intervalo (Metade Superior/Inferior) (-20 pontos)
+                [3] Proximidade (Quente/Frio) (-15 pontos)
+                [4] Voltar ao jogo (sem dica)
+                
+                """);
+
+        int choice = readIntegerNumber("Escolha uma dica (1-4): ");
+
+        switch (choice) {
+            case 1 -> {
+                System.out.println(computerNumber % 2 == 0 ? "\nDICA: O número secreto é PAR!\n" : "\nDICA: O número secreto é ÍMPAR!\n");
+                TOTAL_HINTS_COST += PARITY_HINT_COST;
+            }
+            case 2 -> {
+                int halfNumberLimit = numberLimit / 2;
+
+                if (computerNumber <= halfNumberLimit) {
+                    System.out.printf("\nDICA: O número está na METADE INFERIOR (entre 1 e %d)!\n\n", halfNumberLimit);
+                } else {
+                    System.out.printf("\nDICA: O número está na METADE SUPERIOR (entre %d e %d)!\n\n", halfNumberLimit + 1, numberLimit);
+                }
+
+                TOTAL_HINTS_COST += INTERVAL_HINT_COST;
+            }
+            case 3 -> {
+                if (lastGuess == 0) {
+                    System.out.println("\nDICA: Você ainda não fez nenhum palpite para medir proximidade!\n");
+                } else {
+                    // A distância sempre será positiva (sendo o chute menor ou maior que o número pensado)
+                    int distance = Math.abs(computerNumber - lastGuess);
+
+                    if (distance <= 5) {
+                        System.out.println("\nDICA: Está QUENTE! O número secreto está a 5 ou menos de distância do seu último chute!\n");
+                    } else {
+                        System.out.println("\nDICA: Está FRIO! O número secreto está a mais de 5 de distância do seu último chute!\n");
+                    }
+
+                    TOTAL_HINTS_COST += PROXIMITY_HINT_COST;
+                }
+            }
+            case 4 -> System.out.println("\nVoltando ao jogo...\n");
+            default -> System.out.println("\nOpção inválida! Nenhuma dica comprada.\n");
         }
     }
 
