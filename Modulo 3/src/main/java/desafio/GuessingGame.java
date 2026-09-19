@@ -32,6 +32,10 @@ public class GuessingGame {
     public static String[] SAVED_DIFFICULTY_NAMES = new String[MAX_HISTORY];
     public static int TOTAL_GAMES_SAVED = 0;
 
+    // [DESAFIO BÔNUS] Histórico de Recordes
+    public static int[] BEST_SCORES = new int[3];
+    public static int CURRENT_DIFFICULTY_INDEX = 0;
+
     public static void main(String[] args) {
         while (GAME_IS_RUNNING) {
             mainMenu();
@@ -46,17 +50,19 @@ public class GuessingGame {
                 [1] Iniciar um novo jogo
                 [2] Ver regras
                 [3] Ver histórico de pontuações
-                [4] Sair
+                [4] Ver histórico de recordes
+                [5] Sair
                
                """);
 
-        int option = readIntegerNumber("Escolha uma opção do menu (1-4): ");
+        int option = readIntegerNumber("Escolha uma opção do menu (1-5): ");
 
         switch (option) {
             case 1 -> startNewGame();
             case 2 -> showRules();
             case 3 -> showScoreHistory();
-            case 4 -> exitGame();
+            case 4 -> showRecordsHistory();
+            case 5 -> exitGame();
             default -> System.out.println("ERRO: Essa opção não existe no menu!\n");
         }
     }
@@ -81,6 +87,7 @@ public class GuessingGame {
                 maxAttempts = MAX_ATTEMPTS_CONFIG[difficulty - 1];
                 baseScore = DIFFICULTY_BASE_SCORES_CONFIG[difficulty - 1];
                 currentLevelDifficulty = DIFFICULTY_NAMES_CONFIG[difficulty - 1];
+                CURRENT_DIFFICULTY_INDEX = difficulty - 1;
                 break;
             } else {
                 System.out.println("ERRO: Essa dificuldade não existe!\n");
@@ -117,6 +124,9 @@ public class GuessingGame {
                    overWriteHistory();
                 }
 
+                // [DESAFIO BÔNUS] Verifica se há um novo recorde e o registra
+                registerNewRecord();
+
                 return;
             } else {
                 numberHint(userNumber, computerNumber);
@@ -144,6 +154,13 @@ public class GuessingGame {
         // Registra o jogo atual na última posição
         SAVED_DIFFICULTY_NAMES[MAX_HISTORY - 1] = currentLevelDifficulty;
         SAVED_SCORES[MAX_HISTORY - 1] = baseScore;
+    }
+
+    public static void registerNewRecord() {
+        if (baseScore > BEST_SCORES[CURRENT_DIFFICULTY_INDEX]) {
+            System.out.printf("\nPARABÉNS! Você quebrou seu antigo recorde (%d) na dificuldade %s!\n", BEST_SCORES[CURRENT_DIFFICULTY_INDEX], DIFFICULTY_NAMES_CONFIG[CURRENT_DIFFICULTY_INDEX]);
+            BEST_SCORES[CURRENT_DIFFICULTY_INDEX] = baseScore;
+        }
     }
 
     public static void numberHint(int userNumber, int computerNumber) {
@@ -186,12 +203,22 @@ public class GuessingGame {
     public static void showScoreHistory() {
         // Verifica se não há jogos salvos:
         if (TOTAL_GAMES_SAVED == 0) {
-            System.out.println("Nenhum jogo salvo ainda...\nComece a jogar agora mesmo para ver seu histórico!\n");
+            System.out.println("\nNenhum jogo salvo ainda...\nComece a jogar agora mesmo para ver seu histórico!\n");
             return;
         }
 
+        System.out.println("\n====== HISTÓRICO DE PONTUAÇÕES ======");
+
         for (int i = 0; i < TOTAL_GAMES_SAVED; i++) {
             System.out.printf("[JOGO %d] %s: %d PONTOS\n", i + 1, SAVED_DIFFICULTY_NAMES[i], SAVED_SCORES[i]);
+        }
+    }
+
+    public static void showRecordsHistory() {
+        System.out.println("\n====== HISTÓRICO DE RECORDES ======\n");
+
+        for (int i = 0; i < BEST_SCORES.length; i++) {
+            System.out.printf("[RECORDE] Dificuldade %s: %d pontos\n", DIFFICULTY_NAMES_CONFIG[i], BEST_SCORES[i]);
         }
     }
 
