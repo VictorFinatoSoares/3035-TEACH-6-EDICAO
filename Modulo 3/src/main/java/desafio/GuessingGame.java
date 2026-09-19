@@ -50,17 +50,17 @@ public class GuessingGame {
 
     public static void mainMenu() {
         System.out.println("""
-           
-                ====== MENU PRINCIPAL ======
-               
-                [1] Iniciar um novo jogo
-                [2] Iniciar modo com sequência (3 números)
-                [3] Ver regras
-                [4] Ver histórico de pontuações
-                [5] Ver histórico de recordes
-                [6] Sair
-               
-               """);
+                
+                 ====== MENU PRINCIPAL ======
+                
+                 [1] Iniciar um novo jogo
+                 [2] Iniciar modo com sequência (3 números)
+                 [3] Ver regras
+                 [4] Ver histórico de pontuações
+                 [5] Ver histórico de recordes
+                 [6] Sair
+                
+                """);
 
         int option = readIntegerNumber("Escolha uma opção do menu (1-6): ");
 
@@ -77,7 +77,7 @@ public class GuessingGame {
 
     public static void chooseDifficulty() {
         System.out.println("""
-            
+                
                 ====== DIFICULDADES ======
                 
                 [1] FÁCIL
@@ -139,7 +139,7 @@ public class GuessingGame {
                 if (TOTAL_GAMES_SAVED < MAX_HISTORY) {
                     registerNewGame();
                 } else {
-                   overWriteHistory();
+                    overWriteHistory();
                 }
 
                 // [DESAFIO BÔNUS] Verifica se há um novo recorde e o registra
@@ -292,6 +292,7 @@ public class GuessingGame {
     }
 
     public static void requestHint(int computerNumber, int lastGuess) {
+        // [DESAFIO] BÔNUS
         System.out.println("""
                 
                 ====== LOJA DE DICAS ======
