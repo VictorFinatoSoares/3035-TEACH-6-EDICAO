@@ -15,6 +15,15 @@ public class Jogador {
         this.altura = altura;
     }
 
+    public void chutarBola() {
+        String distancia = this.verificarDistanciaBola();
+        System.out.printf("Chutando... %s\n", distancia);
+    }
+
+    private String verificarDistanciaBola() {
+        return "PERTO";
+    }
+
     public String getPosicao() {
         return posicao;
     }

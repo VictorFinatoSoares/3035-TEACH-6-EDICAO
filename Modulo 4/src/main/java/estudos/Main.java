@@ -13,6 +13,8 @@ public class Main {
         jogadorUm.setPosicao(Posicao.ZAGUEIRO.getDescricao());
         jogadorUm.setIdade(32);
 
+        jogadorUm.chutarBola();
+
         System.out.println(jogadorUm.getPosicao());
         System.out.println(jogadorUm.getIdade());
 
