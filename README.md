@@ -31,6 +31,14 @@ Entre os materiais armazenados estão:
 │   ├── TypeScript/
 │   ├── React/
 │   └── Tarefas/
+├── Modulo 3/
+│   ├── src/main/java/
+│   ├── pom.xml
+│   └── README.md
+├── Modulo 4/
+│   ├── src/main/java/
+│   ├── pom.xml
+│   └── README.md
 └── README.md
 ```
 
@@ -61,6 +69,33 @@ O [Módulo 2](./M%C3%B3dulo%202/) desenvolve aplicações front-end componentiza
 - consumo assíncrono de APIs.
 
 Os projetos deste módulo incluem exercícios isolados de TypeScript, conteúdos de React e seis tarefas práticas.
+
+### Módulo 3 — Java básico e lógica
+
+O [Módulo 3](./Modulo%203/) inicia a trilha de backend com Java e consolida os fundamentos de lógica de programação:
+
+- sintaxe básica, tipos, variáveis e entrada de dados com `Scanner`;
+- operadores aritméticos, relacionais e lógicos;
+- estruturas sequenciais, condicionais e de repetição;
+- organização do código em classes e métodos;
+- geração de números aleatórios e validação de entradas;
+- desenvolvimento de um jogo de adivinhação com níveis, pontuação, dicas, histórico e modo sequência.
+
+O módulo é um projeto Maven. Os exercícios estão organizados por assunto em `src/main/java/exercicios`, enquanto o jogo completo está em `src/main/java/desafio`.
+
+### Módulo 4 — Java e orientação a objetos
+
+O [Módulo 4](./Modulo%204/) aprofunda Java com os principais conceitos de orientação a objetos:
+
+- classes, objetos, construtores, atributos e métodos;
+- encapsulamento, getters, setters e enums;
+- herança, interfaces e polimorfismo;
+- tratamento de exceções com `try`, `catch` e `finally`;
+- collections da biblioteca padrão do Java;
+- expressões lambda e interfaces funcionais;
+- exercícios práticos sobre POO e exceções.
+
+Assim como o módulo anterior, ele utiliza Maven e mantém os estudos e exercícios separados em `src/main/java/estudos` e `src/main/java/exercicios`.
 
 ## Trilha fullstack prevista
 
