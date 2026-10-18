@@ -7,29 +7,29 @@ public class Personagem {
     protected int vida;
     protected int ataque;
     protected int defesa;
-    protected List<String> inventario;
 
-    public Personagem(String nome, int vida, int ataque, int defesa, List<String> inventario) {
+    public Personagem(String nome, int vida, int ataque, int defesa) {
         this.nome = nome;
         this.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
-        this.inventario = inventario;
     }
 
-    public void atacar(Personagem alvo) {
-        System.out.println("ATACOU");
+    public int atacar(Personagem alvo) {
+        return alvo.receberDano(ataque);
     }
 
     public void defender() {
-        System.out.println("DEFENDOU");
+        System.out.println("DEFENDEU");
     }
 
-    public void receberDano(int dano) {
-        System.out.println("RECEBEU DANO");
+    public int receberDano(int dano) {
+        int danoFinal = Math.max(0, dano - defesa);
+        this.vida = Math.max(0, this.vida - danoFinal);
+        return danoFinal;
     }
 
     public boolean estaVivo() {
-        return true;
+        return this.vida > 0;
     }
 }
