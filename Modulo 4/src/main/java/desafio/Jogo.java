@@ -3,33 +3,40 @@ package desafio;
 import java.util.Scanner;
 
 public class Jogo {
-    public static final Scanner sc = new Scanner(System.in);
-
-    static void main(String[] args) {
+    public static void main(String[] args) {
         iniciarJogo();
     }
 
     public static void iniciarJogo() {
         System.out.print("Bem vindo à Arena dos Campeões!\nDigite o seu nome: ");
-        Personagem jogador = criarPersonagem();
 
+        Personagem jogador = criarPersonagem();
         Inimigo oponente = new Inimigo();
 
         while (jogador.estaVivo() && oponente.estaVivo()) {
             exibirStatus(jogador, oponente);
 
             turnoDoJogador(jogador, oponente);
+            exibirStatus(jogador, oponente);
 
-            if (oponente.estaVivo()) {
-                turnoDoInimigo(oponente, jogador);
+            if (!oponente.estaVivo()) {
+                System.out.printf("%s foi derrotado!\n", oponente.getNome());
+                break;
+            }
+
+            turnoDoInimigo(oponente, jogador);
+
+            if (!jogador.estaVivo()) {
+                System.out.printf("%s foi derrotado!\n", jogador.getNome());
+                exibirStatus(jogador, oponente);
             }
         }
 
-        fimDeJogo();
+        fimDeJogo(jogador, oponente);
     }
 
     public static Personagem criarPersonagem() {
-        String nome = sc.nextLine();
+        String nome = Input.lerLinha("Informe seu nome: ");
         int classe;
 
         while (true) {
@@ -42,7 +49,7 @@ public class Jogo {
                     \s
                     """);
 
-            classe = lerInteiro("Sua escolha (1-3): ");
+            classe = Input.lerInteiro("Sua escolha (1-3): ");
 
             if (classe < 1 || classe > 3) {
                 System.out.println("ERRO: Essa classe não existe!");
@@ -51,13 +58,13 @@ public class Jogo {
             break;
         }
 
-        Personagem jogador;
 
+        Personagem jogador;
         switch (classe) {
             case 1 -> jogador = new Guerreiro(nome, 100, 16, 6);
             case 2 -> jogador = new Mago(nome, 100, 16, 6);
             case 3 -> jogador = new Arqueiro(nome, 100, 16, 6);
-            default -> jogador = null;
+            default -> throw new IllegalStateException("Classe validada fora das opções disponíveis.");
         }
 
         for (int i = 0; i < 3; i++) {
@@ -75,11 +82,12 @@ public class Jogo {
                 %s: %d HP
                 %s: %d HP
                 \s
-                """, jogador.nome, jogador.vida, oponente.nome, oponente.vida);
+                """, jogador.getNome(), jogador.getVida(), oponente.getNome(), oponente.getVida());
     }
 
     public static void turnoDoJogador(Personagem jogador, Inimigo oponente) {
-        System.out.printf("""
+        while (true) {
+            System.out.printf("""
                 \s
                 [TURNO DO JOGADOR]
                 \s
@@ -91,49 +99,40 @@ public class Jogo {
                 \s
                 """, jogador.contarItem("Poção de Cura"));
 
-        int acao = lerInteiro("Escolha sua ação (1-3): ");
+            int acao = Input.lerInteiro("Escolha sua ação (1-3): ");
 
-        switch (acao) {
-            case 1:
-                int dano = jogador.atacar(oponente);
-                System.out.printf("%s ataca %s! (DMG: %d)\n", jogador.nome, oponente.nome, dano);
-                break;
-            case 2:
-                jogador.defender();
-                System.out.printf("%s se defende. O próximo dano recebido será reduzido pela metade.\n", jogador.nome);
-                break;
-            case 3:
-                String motivo = jogador.podeCurar();
+            switch (acao) {
+                case 1:
+                    int dano = jogador.atacar(oponente);
+                    System.out.printf("%s ataca %s! (DMG: %d)\n", jogador.getNome(), oponente.getNome(), dano);
+                    return;
+                case 2:
+                    jogador.defender();
+                    System.out.printf("%s se defende. O próximo dano recebido será reduzido pela metade.\n", jogador.getNome());
+                    return;
+                case 3:
+                    String mensagemErro = jogador.mensagemErroCura();
 
-                if (!motivo.isEmpty()) {
-                    System.out.println(motivo);
-                } else {
+                    if (!mensagemErro.isEmpty()) {
+                        System.out.println(mensagemErro);
+                        continue;
+                    }
                     int vidaRecuperada = jogador.usarPocaoCura();
-                    System.out.printf("%s se curou! (+%d HP)\n", jogador.nome, vidaRecuperada);
-                }
-                break;
-            default:
-                System.out.println("Essa ação não está disponível, pulando sua vez...");
+                    System.out.printf("%s se curou! (+%d HP)\n", jogador.getNome(), vidaRecuperada);
+                    return;
+                default:
+                    System.out.println("Essa ação não está disponível, tente novamente...");
+            }
         }
     }
 
     public static void turnoDoInimigo(Inimigo inimigo, Personagem jogador) {
         int dano = inimigo.atacar(jogador);
-        System.out.printf("[TURNO DO INIMIGO]\n%s atacou %s! (DMG: %d)\n", inimigo.nome, jogador.nome, dano);
+        System.out.printf("[TURNO DO INIMIGO]\n%s atacou %s! (DMG: %d)\n",
+                inimigo.getNome(), jogador.getNome(), dano);
     }
 
-    public static void fimDeJogo() {
-        System.out.println("Fim de Jogo");
-    }
-
-    public static int lerInteiro(String msg) {
-        while (true) {
-            try {
-                System.out.print(msg);
-                return Integer.parseInt(sc.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("ERRO: Você precisa digitar um número inteiro.");
-            }
-        }
+    public static void fimDeJogo(Personagem jogador, Inimigo oponente) {
+        System.out.printf("%s VENCEU!\n", jogador.estaVivo() ? jogador.getNome() : oponente.getNome());
     }
 }
