@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class Inimigo extends Personagem {
     private static final Random RANDOM = new Random();
+    // Nomes possíveis para o inimigo
     private static final List<String> LISTA_NOMES = Arrays.asList(
             "Malakar, o Devorador de Sombras",
             "Vorgath, o Senhor da Guerra",
@@ -14,6 +15,7 @@ public class Inimigo extends Personagem {
             "Corvax, o Nobre Traidor");
 
     public Inimigo() {
+        // Gera estatísticas aleatórias pro inimigo
         super(LISTA_NOMES.get(RANDOM.nextInt(LISTA_NOMES.size())),
                 RANDOM.nextInt(50, 100),
                 RANDOM.nextInt(10, 20),
