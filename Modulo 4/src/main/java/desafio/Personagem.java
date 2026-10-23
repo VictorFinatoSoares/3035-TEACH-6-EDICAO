@@ -1,23 +1,21 @@
 package desafio;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Personagem {
+    private static final String POCAO_CURA = "Poção de Cura";
     private final String nome;
     private int vida;
     private final int ataque;
-    private final int defesa;
-    private final List<String> inventario = new ArrayList<>();
+    private final int defesaBase;
+    private final Inventario inventario = new Inventario();
     private final int vidaMaxima;
     private boolean estaDefendendo;
 
-    public Personagem(String nome, int vida, int ataque, int defesa) {
+    public Personagem(String nome, int vida, int ataque, int defesaBase) {
         this.nome = nome;
         this.vida = vida;
         this.vidaMaxima = vida;
         this.ataque = ataque;
-        this.defesa = defesa;
+        this.defesaBase = defesaBase;
     }
 
     public int atacar(Personagem alvo) {
@@ -36,36 +34,9 @@ public class Personagem {
         estaDefendendo = true;
     }
 
-    public String mensagemErroCura() {
-        if (vida >= vidaMaxima) {
-            return "Sua vida já está cheia.";
-        }
-
-        if (!inventario.contains("Poção de Cura")) {
-            return "Você não tem poções de cura.";
-        }
-
-        // String vazia indica que a cura pode ser usada.
-        return "";
-    }
-
-    public int usarPocaoCura() {
-        // Bloqueia a cura se a vida estiver cheia ou não houver poções.
-        if (!mensagemErroCura().isEmpty()) {
-            return 0;
-        }
-
-        int vidaAntes = vida;
-
-        // Consome uma poção e recupera até 20 HP.
-        inventario.remove("Poção de Cura");
-        vida = Math.min(vida + 20, vidaMaxima);
-
-        return vida - vidaAntes;
-    }
-
     public int receberDano(int dano) {
-        int danoFinal = Math.max(0, dano - defesa);
+        // O dano diminui com a defesa base
+        int danoFinal = Math.max(0, dano - defesaBase);
 
         if (estaDefendendo) { // Reduz o próximo dano pela metade e consome a defesa.
             danoFinal /= 2;
@@ -81,12 +52,42 @@ public class Personagem {
         return vida > 0;
     }
 
-    public void adicionarItem(String item) {
-        inventario.add(item);
+    public int usarPocaoCura() {
+        // Bloqueia a cura se a vida estiver cheia ou não houver poções.
+        if (!podeCurar()) {
+            return 0;
+        }
+
+        int vidaAntes = vida;
+
+        // Consome uma poção e recupera até 20 HP.
+        inventario.remover(POCAO_CURA);
+        vida = Math.min(vida + 20, vidaMaxima);
+
+        return vida - vidaAntes;
     }
 
-    public int contarItem(String item) {
-        // Conta as ocorrências do item no inventário.
-        return (int) inventario.stream().filter(item::equals).count();
+    public boolean podeCurar() {
+        if (vida >= vidaMaxima) {
+            System.out.println("Sua vida já está cheia.");
+            return false;
+        }
+
+        if (inventario.contar(POCAO_CURA) == 0) {
+            System.out.println("Você não tem poções de cura.");
+            return false;
+        }
+
+        return true;
+    }
+
+    public void adicionarPocaoCura(int quantidade) {
+        for (int i = 0; i < quantidade; i++) {
+            inventario.adicionar(POCAO_CURA);
+        }
+    }
+
+    public int contarPocoesCura() {
+        return inventario.contar(POCAO_CURA);
     }
 }

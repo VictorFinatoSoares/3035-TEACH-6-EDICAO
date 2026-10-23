@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Input {
     private static final Scanner sc = new Scanner(System.in);
+
     public static int lerInteiro(String msg) {
         while (true) {
             try {
@@ -16,8 +17,16 @@ public class Input {
     }
 
     public static String lerLinha(String msg) {
-        System.out.print(msg);
-        return sc.nextLine();
-    }
+        while (true) {
+            System.out.print(msg);
+            String entrada = sc.nextLine();
 
+            // Não retorna a entrada se ela estiver vazia ou só com espaços em branco
+            if (!entrada.isBlank()) {
+                return entrada;
+            } else {
+                System.out.println("Você precisa escrever algo!");
+            }
+        }
+    }
 }
