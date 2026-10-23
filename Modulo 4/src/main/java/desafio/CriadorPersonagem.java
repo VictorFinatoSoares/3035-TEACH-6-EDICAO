@@ -7,11 +7,11 @@ public class CriadorPersonagem {
 
         while (true) {
             System.out.print("""
-                    LISTA DE CLASSES:
+                    [LISTA DE CLASSES]
                     \s
-                    [1] Guerreiro (BÔNUS: +10 HP)
-                    [2] Mago (BÔNUS: +10 ATK)
-                    [3] Arqueiro (BÔNUS: +10 DEF)
+                    [1] Guerreiro (BÔNUS: +5 Vida)
+                    [2] Mago (BÔNUS: +5 Ataque)
+                    [3] Arqueiro (BÔNUS: +5 Defesa)
                     \s
                     """);
 
@@ -28,11 +28,15 @@ public class CriadorPersonagem {
 
         Personagem jogador;
 
-        switch (classe) {
-            case 1 -> jogador = new Guerreiro(nome, 100, 16, 6);
-            case 2 -> jogador = new Mago(nome, 100, 16, 6);
-            case 3 -> jogador = new Arqueiro(nome, 100, 16, 6);
-            default -> throw new IllegalStateException("Classe validada fora das opções disponíveis.");
+        if (classe == 1) {
+            jogador = new Guerreiro(nome, 100, 16, 6);
+            System.out.println("Você escolheu: Guerreiro");
+        } else if (classe == 2) {
+            jogador = new Mago(nome, 100, 16, 6);
+            System.out.println("Você escolheu: Mago");
+        } else {
+            jogador = new Arqueiro(nome, 100, 16, 6);
+            System.out.println("Você escolheu: Arqueiro");
         }
 
         // Retorna o jogador com a classe escolhida e 3 poções no inventário (quantidade padrão)

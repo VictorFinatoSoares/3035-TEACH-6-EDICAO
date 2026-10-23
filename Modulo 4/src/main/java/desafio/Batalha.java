@@ -2,15 +2,19 @@ package desafio;
 
 public class Batalha {
     public static void iniciarBatalha(Personagem jogador, Inimigo oponente) {
+        jogador.limparDefesa();
+        oponente.limparDefesa();
         exibirStatus(jogador, oponente);
 
         while (jogador.estaVivo() && oponente.estaVivo()) {
-            Batalha.turnoDoJogador(jogador, oponente);
-            Batalha.exibirStatus(jogador, oponente);
+            turnoDoJogador(jogador, oponente);
+            exibirStatus(jogador, oponente);
 
             if (oponente.estaVivo()) {
-                Batalha.turnoDoInimigo(oponente, jogador);
-                Batalha.exibirStatus(jogador, oponente);
+                turnoDoInimigo(oponente, jogador);
+                if (jogador.estaVivo()) {
+                    exibirStatus(jogador, oponente);
+                }
             }
         }
     }
@@ -18,8 +22,9 @@ public class Batalha {
     public static void exibirStatus(Personagem jogador, Inimigo oponente) {
         System.out.printf("""
                 \s
-                ==== SITUAÇÃO DE BATALHA ====:
-                %s (%d HP) vs %s (%d HP)
+                [SITUAÇÃO DA BATALHA ATUAL]
+                %s (%d de vida)
+                %s (%d de vida)
                 \s
                 """, jogador.getNome(), jogador.getVida(), oponente.getNome(), oponente.getVida());
     }
@@ -30,11 +35,11 @@ public class Batalha {
                     \s
                     [TURNO DO JOGADOR]
                     \s
-                    AÇÕES DISPONÍVEIS:
+                    Ações disponíveis:
                     \s
                     [1] Atacar
                     [2] Defender (Reduz o dano do próximo ataque pela metade)
-                    [3] Usar poção de cura (%d disponíveis)
+                    [3] Usar poção de cura (%d restantes)
                     \s
                     """, jogador.contarPocoesCura());
 
@@ -43,7 +48,7 @@ public class Batalha {
             switch (acao) {
                 case 1:
                     int dano = jogador.atacar(oponente);
-                    System.out.printf("%s ataca %s! (DMG: %d)\n", jogador.getNome(), oponente.getNome(), dano);
+                    System.out.printf("%s ataca %s! (Causou %d de dano)\n", jogador.getNome(), oponente.getNome(), dano);
                     return;
                 case 2:
                     jogador.defender();
@@ -52,10 +57,11 @@ public class Batalha {
                 case 3:
                     int vidaRecuperada = jogador.usarPocaoCura();
                     if (vidaRecuperada == 0) {
+                        System.out.println("Não foi possível se curar!");
                         continue;
                     }
 
-                    System.out.printf("%s se curou! (+%d HP)\n", jogador.getNome(), vidaRecuperada);
+                    System.out.printf("%s se curou! (Ganhou %d pontos de vida)\n", jogador.getNome(), vidaRecuperada);
                     return;
                 default:
                     System.out.println("Essa ação não está disponível, tente novamente...");
@@ -64,7 +70,12 @@ public class Batalha {
     }
 
     public static void turnoDoInimigo(Inimigo inimigo, Personagem jogador) {
-        int dano = inimigo.atacar(jogador);
-        System.out.printf("[TURNO DO INIMIGO]\n%s atacou %s! (DMG: %d)\n", inimigo.getNome(), jogador.getNome(), dano);
+        if (Inimigo.deveDefender()) {
+            inimigo.defender();
+            System.out.printf("[TURNO DO INIMIGO]\n%s se defende! O próximo dano recebido será reduzido pela metade.\n", inimigo.getNome());
+        } else {
+            int dano = inimigo.atacar(jogador);
+            System.out.printf("[TURNO DO INIMIGO]\n%s atacou %s! (Causou %d de dano)\n", inimigo.getNome(), jogador.getNome(), dano);
+        }
     }
 }

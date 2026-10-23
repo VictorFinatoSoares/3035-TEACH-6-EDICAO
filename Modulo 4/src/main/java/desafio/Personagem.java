@@ -19,7 +19,7 @@ public class Personagem {
     }
 
     public int atacar(Personagem alvo) {
-        return alvo.receberDano(ataque);
+        return alvo.tomarDano(ataque);
     }
 
     public String getNome() {
@@ -34,7 +34,11 @@ public class Personagem {
         estaDefendendo = true;
     }
 
-    public int receberDano(int dano) {
+    public void limparDefesa() {
+        estaDefendendo = false;
+    }
+
+    public int tomarDano(int dano) {
         // O dano diminui com a defesa base
         int danoFinal = Math.max(0, dano - defesaBase);
 
@@ -60,7 +64,7 @@ public class Personagem {
 
         int vidaAntes = vida;
 
-        // Consome uma poção e recupera até 20 HP.
+        // Consome uma poção e recupera até 20 pontos de vida.
         inventario.remover(POCAO_CURA);
         vida = Math.min(vida + 20, vidaMaxima);
 
@@ -68,17 +72,7 @@ public class Personagem {
     }
 
     public boolean podeCurar() {
-        if (vida >= vidaMaxima) {
-            System.out.println("Sua vida já está cheia.");
-            return false;
-        }
-
-        if (inventario.contar(POCAO_CURA) == 0) {
-            System.out.println("Você não tem poções de cura.");
-            return false;
-        }
-
-        return true;
+        return vida < vidaMaxima && inventario.contar(POCAO_CURA) != 0;
     }
 
     public void adicionarPocaoCura(int quantidade) {

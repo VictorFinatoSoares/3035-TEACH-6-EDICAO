@@ -7,24 +7,23 @@ public class Jogo {
     }
 
     public static void iniciarJogo() {
-        System.out.println("Bem vindo à Arena dos Campeões!");
+        System.out.println("Bem-vindo à Arena dos Campeões!");
 
         Personagem jogador = CriadorPersonagem.criarJogador();
         int qtdVitorias = 0;
 
         while (jogador.estaVivo() && qtdVitorias < TOTAL_INIMIGOS) {
             Inimigo oponente = CriadorPersonagem.criarOponente();
-
-            // A vida e as poções são mantidas entre as batalhas.
+            // A vida e as poções são mantidas entre as batalhas, a defesa não.
             Batalha.iniciarBatalha(jogador, oponente);
 
             if (!oponente.estaVivo()) {
                 qtdVitorias++;
-                System.out.printf("%s foi derrotado!\nPlacar: %d/%d\n", oponente.getNome(), qtdVitorias, TOTAL_INIMIGOS);
+                System.out.printf("%s foi derrotado!\n[PLACAR %d/%d]\n", oponente.getNome(), qtdVitorias, TOTAL_INIMIGOS);
             }
 
             if (!jogador.estaVivo()) {
-                System.out.println("Ops...");
+                System.out.println("\nOps...");
                 Batalha.exibirStatus(jogador, oponente);
             }
         }
@@ -33,6 +32,6 @@ public class Jogo {
     }
 
     public static void fimDeJogo(int qtdVitorias, int totalInimigos) {
-        System.out.println(qtdVitorias == totalInimigos ? "Você VENCEU! Campeão da arena!" : "Você PERDEU! Talvez em uma próxima partida!");
+        System.out.println(qtdVitorias == totalInimigos ? "Você venceu! Campeão da arena!" : "Você perdeu! Talvez em uma próxima partida!");
     }
 }
