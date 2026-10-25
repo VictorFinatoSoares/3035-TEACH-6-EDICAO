@@ -15,15 +15,15 @@ public class Inimigo extends Personagem {
             "Corvax, o Nobre Traidor");
 
     public static boolean deveDefender() {
-        // Em 1 de 4 resultados o inimigo defende; nos outros 3, ataca.
+        // 25% de chance do inimigo decidir defender em um turno
         return RANDOM.nextInt(4) == 0;
     }
 
     public Inimigo() {
-        // Gera estatísticas aleatórias pro inimigo
-        super(LISTA_NOMES.get(RANDOM.nextInt(LISTA_NOMES.size())),
-                RANDOM.nextInt(70, 90),
-                RANDOM.nextInt(15, 21),
-                RANDOM.nextInt(2, 6));
+        // Gera atributos aleatórios para o inimigo
+        super(LISTA_NOMES.get(RANDOM.nextInt(LISTA_NOMES.size())), // Índice na lista de nomes (0-4)
+                RANDOM.nextInt(75, 91), // Vida (75-90
+                RANDOM.nextInt(12, 17), // Dano (12-16)
+                RANDOM.nextInt(1, 4)); // Defesa (1-3)
     }
 }

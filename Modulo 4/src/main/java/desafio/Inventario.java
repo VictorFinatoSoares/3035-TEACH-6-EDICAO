@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventario {
+    // A lista permite multíplos itens de mesmo tipo
     private final List<String> itens = new ArrayList<>();
 
     public void adicionar(String item) {
