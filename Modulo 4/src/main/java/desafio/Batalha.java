@@ -2,11 +2,15 @@ package desafio;
 
 public class Batalha {
     public static void iniciarBatalha(Personagem jogador, Inimigo oponente) {
+        // As defesas não são mantidas entre batalhas diferentes
         jogador.limparDefesa();
         oponente.limparDefesa();
+
+        System.out.printf("Inimigo encontrado: %s!\n", oponente.getNome());
         exibirStatus(jogador, oponente);
 
         while (jogador.estaVivo() && oponente.estaVivo()) {
+            // O inimigo só age se ainda estiver vivo após a ação do jogador
             turnoDoJogador(jogador, oponente);
             exibirStatus(jogador, oponente);
 
@@ -57,6 +61,7 @@ public class Batalha {
                 case 3:
                     int vidaRecuperada = jogador.usarPocaoCura();
                     if (vidaRecuperada == 0) {
+                        // Cura inválida não encerra o turno: o jogador pode escolher outra ação.
                         System.out.println("Não foi possível se curar!");
                         continue;
                     }

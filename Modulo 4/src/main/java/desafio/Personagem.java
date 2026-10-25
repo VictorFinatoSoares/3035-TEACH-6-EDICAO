@@ -10,6 +10,7 @@ public class Personagem {
     private final int vidaMaxima;
     private boolean estaDefendendo;
 
+    // Guarda os atributos comuns a qualquer personagem e a vida máxima usada pela cura
     public Personagem(String nome, int vida, int ataque, int defesaBase) {
         this.nome = nome;
         this.vida = vida;
@@ -31,6 +32,7 @@ public class Personagem {
     }
 
     public void defender() {
+        // A defesa fica ativa até o personagem receber o próximo ataque
         estaDefendendo = true;
     }
 
@@ -39,15 +41,15 @@ public class Personagem {
     }
 
     public int tomarDano(int dano) {
-        // O dano diminui com a defesa base
+        // Primeiro aplica a defesa permanente, se estiver defendendo, reduz metade o dano restante pela metade
         int danoFinal = Math.max(0, dano - defesaBase);
 
-        if (estaDefendendo) { // Reduz o próximo dano pela metade e consome a defesa.
+        if (estaDefendendo) { // Reduz o próximo dano pela metade e consome a defesa
             danoFinal /= 2;
             estaDefendendo = false;
         }
 
-        // Aplica o dano final à vida e retorna seu valor.
+        // A vida não fica negativa, o valor retornado é o dano sofrido realmente sofrido
         this.vida = Math.max(0, this.vida - danoFinal);
         return danoFinal;
     }
@@ -57,14 +59,14 @@ public class Personagem {
     }
 
     public int usarPocaoCura() {
-        // Bloqueia a cura se a vida estiver cheia ou não houver poções.
+        // Não consome poção se o personagem já estiver com a vida cheia ou sem itens
         if (!podeCurar()) {
             return 0;
         }
 
         int vidaAntes = vida;
 
-        // Consome uma poção e recupera até 20 pontos de vida.
+        // Consome a poção e recupera até 20 pontos, sem ultrapassar a vida máxima
         inventario.remover(POCAO_CURA);
         vida = Math.min(vida + 20, vidaMaxima);
 

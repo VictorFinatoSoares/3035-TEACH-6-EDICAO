@@ -9,9 +9,9 @@ public class CriadorPersonagem {
             System.out.print("""
                     [LISTA DE CLASSES]
                     \s
-                    [1] Guerreiro (BÔNUS: +5 Vida)
-                    [2] Mago (BÔNUS: +5 Ataque)
-                    [3] Arqueiro (BÔNUS: +5 Defesa)
+                    [1] Guerreiro (BÔNUS: +15 Vida)
+                    [2] Mago (BÔNUS: +2 Ataque)
+                    [3] Arqueiro (BÔNUS: +1 Defesa)
                     \s
                     """);
 
@@ -28,14 +28,15 @@ public class CriadorPersonagem {
 
         Personagem jogador;
 
+        // As estatísticas base de cada classe são as mesmas.
         if (classe == 1) {
-            jogador = new Guerreiro(nome, 100, 16, 6);
+            jogador = new Guerreiro(nome, 100, 15, 6);
             System.out.println("Você escolheu: Guerreiro");
         } else if (classe == 2) {
-            jogador = new Mago(nome, 100, 16, 6);
+            jogador = new Mago(nome, 100, 15, 6);
             System.out.println("Você escolheu: Mago");
         } else {
-            jogador = new Arqueiro(nome, 100, 16, 6);
+            jogador = new Arqueiro(nome, 100, 15, 6);
             System.out.println("Você escolheu: Arqueiro");
         }
 
