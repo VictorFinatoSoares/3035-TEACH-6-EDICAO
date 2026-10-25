@@ -5,8 +5,6 @@ Arena dos Campeões é um RPG de turnos executado no terminal. O jogador escolhe
 ## Requisitos
 
 - JDK 25 ou superior para compilar diretamente com `javac`.
-- Para compilar pelo Maven, use JDK 25. O `pom.xml` do módulo está configurado com `maven.compiler.source` e `maven.compiler.target` iguais a `25`.
-- Maven é necessário somente para o fluxo de compilação com Maven.
 
 ## Compilar e executar
 
@@ -17,13 +15,6 @@ Execute os comandos a partir da raiz do módulo (`Modulo 4`).
 ```bash
 mkdir -p target/classes
 javac -d target/classes $(find src/main/java -name '*.java')
-java -cp target/classes desafio.Jogo
-```
-
-### Com Maven e JDK 25
-
-```bash
-mvn compile
 java -cp target/classes desafio.Jogo
 ```
 

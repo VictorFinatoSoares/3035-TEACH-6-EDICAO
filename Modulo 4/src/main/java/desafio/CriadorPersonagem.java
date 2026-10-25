@@ -1,6 +1,11 @@
 package desafio;
 
 public class CriadorPersonagem {
+    private static final int VIDA_INICIAL = 100;
+    private static final int ATAQUE_INICIAL = 15;
+    private static final int DEFESA_INICIAL = 6;
+    private static final int POCOES_INICIAS = 3;
+
     public static Personagem criarJogador() {
         String nome = Input.lerLinha("Digite o seu nome: ");
         int classe;
@@ -22,26 +27,25 @@ public class CriadorPersonagem {
                 System.out.println("ERRO: Essa classe não existe!");
                 continue;
             }
-
             break;
         }
 
         Personagem jogador;
 
-        // As estatísticas base de cada classe são as mesmas.
+        // As estatísticas base de cada classe são as mesmas
         if (classe == 1) {
-            jogador = new Guerreiro(nome, 100, 15, 6);
+            jogador = new Guerreiro(nome, VIDA_INICIAL, ATAQUE_INICIAL, DEFESA_INICIAL);
             System.out.println("Você escolheu: Guerreiro");
         } else if (classe == 2) {
-            jogador = new Mago(nome, 100, 15, 6);
+            jogador = new Mago(nome, VIDA_INICIAL, ATAQUE_INICIAL, DEFESA_INICIAL);
             System.out.println("Você escolheu: Mago");
         } else {
-            jogador = new Arqueiro(nome, 100, 15, 6);
+            jogador = new Arqueiro(nome, VIDA_INICIAL, ATAQUE_INICIAL, DEFESA_INICIAL);
             System.out.println("Você escolheu: Arqueiro");
         }
 
         // Retorna o jogador com a classe escolhida e 3 poções no inventário (quantidade padrão)
-        jogador.adicionarPocaoCura(3);
+        jogador.adicionarPocaoCura(POCOES_INICIAS);
         return jogador;
     }
 

@@ -10,10 +10,10 @@ public class Batalha {
         exibirStatus(jogador, oponente);
 
         while (jogador.estaVivo() && oponente.estaVivo()) {
-            // O inimigo só age se ainda estiver vivo após a ação do jogador
             turnoDoJogador(jogador, oponente);
             exibirStatus(jogador, oponente);
 
+            // O inimigo só age se ainda estiver vivo após a ação do jogador
             if (oponente.estaVivo()) {
                 turnoDoInimigo(oponente, jogador);
                 if (jogador.estaVivo()) {
@@ -51,17 +51,20 @@ public class Batalha {
 
             switch (acao) {
                 case 1:
+                    // O método atacar retorna o dano causado ao alvo
                     int dano = jogador.atacar(oponente);
                     System.out.printf("%s ataca %s! (Causou %d de dano)\n", jogador.getNome(), oponente.getNome(), dano);
                     return;
                 case 2:
+                    // A defesa reduz o dano do próximo ataque pela metade (considera a defesa base do jogador também)
                     jogador.defender();
                     System.out.printf("%s se defende. O próximo dano recebido será reduzido pela metade.\n", jogador.getNome());
                     return;
                 case 3:
                     int vidaRecuperada = jogador.usarPocaoCura();
+
+                    // Se a cura não foi possível, ainda é possível escolher uma ação nesse turno
                     if (vidaRecuperada == 0) {
-                        // Cura inválida não encerra o turno: o jogador pode escolher outra ação.
                         System.out.println("Não foi possível se curar!");
                         continue;
                     }
@@ -75,12 +78,14 @@ public class Batalha {
     }
 
     public static void turnoDoInimigo(Inimigo inimigo, Personagem jogador) {
+        System.out.println("[TURNO DO INIMIGO]");
+
         if (Inimigo.deveDefender()) {
             inimigo.defender();
-            System.out.printf("[TURNO DO INIMIGO]\n%s se defende! O próximo dano recebido será reduzido pela metade.\n", inimigo.getNome());
+            System.out.printf("%s se defende! O próximo dano recebido será reduzido pela metade.\n", inimigo.getNome());
         } else {
             int dano = inimigo.atacar(jogador);
-            System.out.printf("[TURNO DO INIMIGO]\n%s atacou %s! (Causou %d de dano)\n", inimigo.getNome(), jogador.getNome(), dano);
+            System.out.printf("%s atacou %s! (Causou %d de dano)\n", inimigo.getNome(), jogador.getNome(), dano);
         }
     }
 }
