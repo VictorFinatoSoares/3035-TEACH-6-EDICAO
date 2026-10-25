@@ -12,10 +12,11 @@ public class Jogo {
         Personagem jogador = CriadorPersonagem.criarJogador();
         int qtdVitorias = 0;
 
-        // A campanha termina ao vencer os três confrontos ou quando a vida do jogador chega a zero.
+        // O jogo termina se o jogador morrer ou vencer os três oponentes
         while (jogador.estaVivo() && qtdVitorias < TOTAL_INIMIGOS) {
             Inimigo oponente = CriadorPersonagem.criarOponente();
-            // A vida e as poções são mantidas entre as batalhas, a defesa não.
+
+            // A vida e as poções continuam entre as batalhas, mas a defesa é zerada
             Batalha.iniciarBatalha(jogador, oponente);
 
             if (!oponente.estaVivo()) {

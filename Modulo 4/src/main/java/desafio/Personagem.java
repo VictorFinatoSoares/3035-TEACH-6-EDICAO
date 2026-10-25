@@ -2,6 +2,7 @@ package desafio;
 
 public class Personagem {
     private static final String POCAO_CURA = "Poção de Cura";
+    private static final int PONTOS_CURA = 20;
     private final String nome;
     private int vida;
     private final int ataque;
@@ -41,15 +42,16 @@ public class Personagem {
     }
 
     public int tomarDano(int dano) {
-        // Primeiro aplica a defesa permanente, se estiver defendendo, reduz metade o dano restante pela metade
+        // Aplica a defesa base
         int danoFinal = Math.max(0, dano - defesaBase);
 
-        if (estaDefendendo) { // Reduz o próximo dano pela metade e consome a defesa
+        // Se estiver defendendo, reduz o próximo dano pela metade e consome a defesa
+        if (estaDefendendo) {
             danoFinal /= 2;
-            estaDefendendo = false;
+            limparDefesa();
         }
 
-        // A vida não fica negativa, o valor retornado é o dano sofrido realmente sofrido
+        // A vida não fica negativa, o valor retornado é o dano calculado após as defesas
         this.vida = Math.max(0, this.vida - danoFinal);
         return danoFinal;
     }
@@ -68,13 +70,13 @@ public class Personagem {
 
         // Consome a poção e recupera até 20 pontos, sem ultrapassar a vida máxima
         inventario.remover(POCAO_CURA);
-        vida = Math.min(vida + 20, vidaMaxima);
+        vida = Math.min(vida + PONTOS_CURA, vidaMaxima);
 
         return vida - vidaAntes;
     }
 
     public boolean podeCurar() {
-        return vida < vidaMaxima && inventario.contar(POCAO_CURA) != 0;
+        return vida < vidaMaxima && contarPocoesCura() != 0;
     }
 
     public void adicionarPocaoCura(int quantidade) {
