@@ -14,9 +14,14 @@ public class CriadorPersonagem {
             System.out.print("""
                     [LISTA DE CLASSES]
                     \s
-                    [1] Guerreiro (BÔNUS: +15 Vida)
-                    [2] Mago (BÔNUS: +2 Ataque)
-                    [3] Arqueiro (BÔNUS: +1 Defesa)
+                    [1] Guerreiro
+                    Descrição: Classe com foco em resistência, recebe 15 pontos de vida extra.
+                    \s
+                    [2] Mago
+                    Descrição: Classe com foco em ataque, recebe 2 pontos de ataque extra.
+                    \s
+                    [3] Arqueiro
+                    Descrição: Classe com foco em defesa aprimorada, recebe 1 ponto de defesa extra.
                     \s
                     """);
 
