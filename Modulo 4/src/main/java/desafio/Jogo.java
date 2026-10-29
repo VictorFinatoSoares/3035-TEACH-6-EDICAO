@@ -8,6 +8,7 @@ import java.util.Map;
 public class Jogo {
     private static final int TOTAL_INIMIGOS = 3;
     private static final int PONTOS_POR_VITORIA = 10;
+    private static final int MOEDAS_POR_VITORIA = 10;
     private static final Map<String, Integer> ranking = new HashMap<>();
 
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class Jogo {
         Personagem jogador = CriadorPersonagem.criarJogador();
         int qtdVitorias = 0;
         int pontuacao = 0;
+        int moedas = 0;
 
         // O jogo termina se o jogador morrer ou vencer os três oponentes
         while (jogador.estaVivo() && qtdVitorias < TOTAL_INIMIGOS) {
@@ -35,9 +37,18 @@ public class Jogo {
             if (!oponente.estaVivo()) {
                 qtdVitorias++;
                 pontuacao += PONTOS_POR_VITORIA;
-                System.out.printf("%s foi derrotado!\n[PLACAR %d/%d]\n",
+                System.out.printf("%s foi derrotado!\n\n[PLACAR %d/%d]\n",
                         oponente.getNome(), qtdVitorias, TOTAL_INIMIGOS);
                 System.out.printf("+%d pontos!\n", PONTOS_POR_VITORIA);
+
+                // As moedas são da partida atual e podem ser gastas entre as batalhas
+                moedas += MOEDAS_POR_VITORIA;
+                System.out.printf("+%d moedas!\n", MOEDAS_POR_VITORIA);
+
+                // A loja só abre se ainda houver outra batalha nesta partida
+                if (qtdVitorias < TOTAL_INIMIGOS) {
+                    moedas = Loja.abrirLoja(jogador, moedas);
+                }
             }
 
             if (!jogador.estaVivo()) {

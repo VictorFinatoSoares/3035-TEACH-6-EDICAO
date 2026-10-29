@@ -5,10 +5,10 @@ public class Personagem {
     private static final int PONTOS_CURA = 20;
     private final String nome;
     private int vida;
-    private final int ataque;
+    private int ataque;
     private final int defesaBase;
     private final Inventario inventario = new Inventario();
-    private final int vidaMaxima;
+    private int vidaMaxima;
     private boolean estaDefendendo;
 
     // Guarda os atributos comuns a qualquer personagem e a vida máxima usada pela cura
@@ -30,6 +30,19 @@ public class Personagem {
 
     public int getVida() {
         return vida;
+    }
+
+    public void melhorarAtaque(int bonus) {
+        if (bonus > 0) {
+            ataque += bonus;
+        }
+    }
+
+    public void melhorarVidaMaxima(int bonus) {
+        if (bonus > 0) {
+            vidaMaxima += bonus;
+            vida = Math.min(vida + bonus, vidaMaxima);
+        }
     }
 
     public void defender() {
