@@ -1,0 +1,24 @@
+create table books (
+	id int primary key,
+	title varchar(100),
+	"year" int,
+	edition varchar(50),
+	price decimal
+);
+
+select * from books
+
+insert into books (id, title, "year", edition, price) values
+(1, 'Harry Potter', 2000, 'teste', 30.00),
+(2, 'Harry Potter 2', 2002, 'teste2', 59.90);
+
+select title from books where id = 2;
+
+create table authors (
+	id serial primary key,
+	"name" varchar(50) not null,
+	nationality varchar(50),
+	date_of_birth date
+);
+
+select * from authors
