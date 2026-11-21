@@ -1,0 +1,8 @@
+# IDE settings
+**/.idea/
+
+# Maven build output
+**/target/
+
+# Empty lockfile generated at the Módulo 2 folder root (projects have their own lockfiles)
+/Módulo 2/package-lock.json
