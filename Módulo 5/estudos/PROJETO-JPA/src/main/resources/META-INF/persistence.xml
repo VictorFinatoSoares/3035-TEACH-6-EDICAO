@@ -5,10 +5,10 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
 
-    <persistence-unit name="PROJETO-JPA" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="DB-JPA" transaction-type="RESOURCE_LOCAL">
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/LOJA-TEACH"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/DB-JPA"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="postgres"/>
 
